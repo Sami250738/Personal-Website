@@ -4,590 +4,450 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jayed Insights</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --navy: #0f1f3d;
-    --navy-light: #1a3260;
-    --gold: #b8952a;
-    --gold-light: #d4af50;
-    --cream: #f9f5ee;
-    --cream-dark: #ede8dc;
-    --cricket-green: #1a4d2e;
-    --cricket-green-light: #2a7040;
-    --text-dark: #1a1a1a;
-    --text-mid: #3d3d3d;
-    --text-muted: #6b6b6b;
+    --navy: #0f1f3d; --navy-light: #1a3260;
+    --gold: #b8952a; --gold-light: #d4af50;
+    --cream: #f9f5ee; --cream-dark: #ede8dc;
+    --green: #1a4d2e; --green-light: #2a7040;
+    --text-dark: #1a1a1a; --text-mid: #3d3d3d; --text-muted: #6b6b6b;
     --border: #d6cebf;
   }
-
   html { scroll-behavior: smooth; }
+  body { font-family: 'Crimson Text', Georgia, serif; background: var(--cream); color: var(--text-dark); font-size: 18px; line-height: 1.75; }
 
-  body {
-    font-family: 'Crimson Text', Georgia, serif;
-    background: var(--cream);
-    color: var(--text-dark);
-    font-size: 18px;
-    line-height: 1.75;
-  }
+  .page { display: none; }
+  .page.active { display: block; }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--navy);
-    border-bottom: 2px solid var(--gold);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%;
-    height: 64px;
-  }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--navy); border-bottom: 2px solid var(--gold); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.04em; cursor: pointer; border: none; background: none; }
+  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+  .nav-links button { background: none; border: none; cursor: pointer; color: #c9c4b8; font-family: 'Crimson Text', serif; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; padding: 0; }
+  .nav-links button:hover, .nav-links button.active-nav { color: var(--gold-light); }
+  .nav-links button.active-nav { border-bottom: 1.5px solid var(--gold-light); padding-bottom: 2px; }
 
-  .nav-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    letter-spacing: 0.04em;
-    text-decoration: none;
-  }
-
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: #c9c4b8;
-    text-decoration: none;
-    font-family: 'Crimson Text', serif;
-    font-size: 1rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold-light); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center;
-    padding: 100px 5% 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 59px,
-      rgba(184,149,42,0.07) 59px,
-      rgba(184,149,42,0.07) 60px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 79px,
-      rgba(184,149,42,0.07) 79px,
-      rgba(184,149,42,0.07) 80px
-    );
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.85rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-    font-family: 'Crimson Text', serif;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 0.4rem;
-  }
-
+  /* HERO */
+  .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,149,42,0.06) 59px, rgba(184,149,42,0.06) 60px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(184,149,42,0.06) 79px, rgba(184,149,42,0.06) 80px); pointer-events: none; }
+  .hero-eyebrow { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 0.4rem; }
   .hero h1 span { color: var(--gold-light); }
+  .hero-divider { width: 60px; height: 2px; background: var(--gold); margin: 1.4rem auto; }
+  .hero-tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a9a49a; max-width: 540px; margin-bottom: 2.8rem; }
 
-  .hero-divider {
-    width: 60px; height: 2px;
-    background: var(--gold);
-    margin: 1.5rem auto;
-  }
+  .hero-sections { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+  .section-card { width: 220px; padding: 1.8rem 1.5rem; cursor: pointer; border: 1.5px solid rgba(255,255,255,0.1); transition: transform 0.25s, background 0.25s; text-align: left; background: rgba(255,255,255,0.04); }
+  .section-card:hover { transform: translateY(-4px); }
+  .section-card.biz { border-top: 3px solid var(--gold); }
+  .section-card.biz:hover { background: rgba(184,149,42,0.1); }
+  .section-card.cric { border-top: 3px solid #4caf50; }
+  .section-card.cric:hover { background: rgba(76,175,80,0.1); }
+  .card-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .card-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .section-card.biz .card-label { color: var(--gold); }
+  .section-card.cric .card-label { color: #81c784; }
+  .card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem; }
+  .card-desc { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 1rem; }
+  .card-arrow { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .section-card.biz .card-arrow { color: var(--gold-light); }
+  .section-card.cric .card-arrow { color: #81c784; }
 
-  .hero-tagline {
-    font-family: 'EB Garamond', serif;
-    font-style: italic;
-    font-size: 1.35rem;
-    color: #a9a49a;
-    max-width: 560px;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-pills {
-    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    margin-bottom: 2.8rem;
-  }
-
-  .pill {
-    padding: 0.45rem 1.4rem;
-    border-radius: 2px;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-family: 'Crimson Text', serif;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .pill-business {
-    background: var(--gold);
-    color: var(--navy);
-  }
-
-  .pill-cricket {
-    background: var(--cricket-green);
-    color: #c8e6c9;
-    border: 1px solid var(--cricket-green-light);
-  }
-
-  .hero-cta {
-    display: inline-block;
-    padding: 0.75rem 2.5rem;
-    border: 1.5px solid var(--gold);
-    color: var(--gold-light);
-    text-decoration: none;
-    font-family: 'Crimson Text', serif;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    transition: background 0.25s, color 0.25s;
-  }
-  .hero-cta:hover { background: var(--gold); color: var(--navy); }
-
-  .hero-scroll-hint {
-    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-    color: rgba(255,255,255,0.3);
-    font-size: 0.78rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    display: flex; flex-direction: column; align-items: center; gap: 6px;
-  }
-  .scroll-arrow {
-    width: 16px; height: 16px;
-    border-right: 1.5px solid rgba(255,255,255,0.3);
-    border-bottom: 1.5px solid rgba(255,255,255,0.3);
-    transform: rotate(45deg);
-    animation: bounce 1.6s ease-in-out infinite;
-  }
+  .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.25); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .scroll-arrow { width: 14px; height: 14px; border-right: 1.5px solid rgba(255,255,255,0.25); border-bottom: 1.5px solid rgba(255,255,255,0.25); transform: rotate(45deg); animation: bounce 1.6s ease-in-out infinite; }
   @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
 
-  /* ── SECTION BASE ── */
-  section { padding: 90px 5%; }
-
-  .section-label {
-    font-size: 0.78rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-    font-family: 'Crimson Text', serif;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 600;
-    line-height: 1.2;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-  }
-
-  .underline-rule {
-    width: 50px; height: 2px;
-    background: var(--gold);
-    margin: 1rem 0 2rem;
-  }
-
-  /* ── ABOUT ── */
-  #about { background: var(--cream); }
-
-  .about-grid {
-    max-width: 1100px; margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    color: var(--text-mid);
-    margin-bottom: 1.1rem;
-  }
-
-  .about-text p em {
-    font-style: italic;
-    color: var(--text-dark);
-  }
-
+  /* ABOUT */
+  .about-section { padding: 90px 5%; background: var(--cream); }
+  .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .section-label { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; font-family: 'Crimson Text', serif; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .rule { width: 50px; height: 2px; background: var(--gold); margin: 1rem 0 2rem; }
+  .about-text p { color: var(--text-mid); margin-bottom: 1.1rem; }
+  .about-text p em { font-style: italic; color: var(--text-dark); }
   .about-columns { display: flex; flex-direction: column; gap: 1.5rem; }
-
-  .about-card {
-    border-left: 3px solid var(--gold);
-    padding: 1rem 1.25rem;
-    background: var(--cream-dark);
-  }
-
-  .about-card.cricket { border-left-color: var(--cricket-green); }
-
-  .about-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 0.3rem;
-    display: flex; align-items: center; gap: 8px;
-  }
-
-  .about-card-title .tag {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 2px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-family: 'Crimson Text', serif;
-  }
-
+  .about-card { border-left: 3px solid var(--gold); padding: 1rem 1.25rem; background: var(--cream-dark); cursor: pointer; transition: transform 0.2s; }
+  .about-card:hover { transform: translateX(4px); }
+  .about-card.cric-card { border-left-color: var(--green); }
+  .about-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; display: flex; align-items: center; gap: 8px; }
+  .tag { font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Crimson Text', serif; }
   .tag-biz { background: var(--gold); color: var(--navy); }
-  .tag-cric { background: var(--cricket-green); color: #c8e6c9; }
-
+  .tag-cric { background: var(--green); color: #c8e6c9; }
   .about-card p { font-size: 0.95rem; color: var(--text-muted); }
 
-  /* ── WRITING AREAS (split section) ── */
-  #writing {
-    background: var(--navy);
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+  /* PAGE HEADER */
+  .page-header { padding: 100px 5% 50px; position: relative; overflow: hidden; }
+  .page-header.biz-header { background: var(--navy); }
+  .page-header.cric-header { background: var(--green); }
+  .page-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255,255,255,0.04) 49px, rgba(255,255,255,0.04) 50px), repeating-linear-gradient(90deg, transparent, transparent 69px, rgba(255,255,255,0.04) 69px, rgba(255,255,255,0.04) 70px); pointer-events: none; }
+  .page-header-inner { max-width: 800px; position: relative; }
+  .back-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.45); font-family: 'Crimson Text', serif; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 6px; padding: 0; transition: color 0.2s; }
+  .back-btn:hover { color: rgba(255,255,255,0.9); }
+  .page-eyebrow { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .biz-header .page-eyebrow { color: var(--gold); }
+  .cric-header .page-eyebrow { color: #81c784; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 0.8rem; }
+  .page-header p { font-family: 'EB Garamond', serif; font-style: italic; color: rgba(255,255,255,0.6); font-size: 1.15rem; max-width: 540px; }
+  .page-rule { width: 50px; height: 2px; margin: 1rem 0; }
+  .biz-header .page-rule { background: var(--gold); }
+  .cric-header .page-rule { background: #4caf50; }
 
-  .writing-side {
-    padding: 90px 6%;
-    position: relative;
-  }
+  /* ARTICLES */
+  .articles-section { padding: 60px 5% 90px; background: var(--cream); }
+  .articles-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+  .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
 
-  .writing-side.business { background: var(--navy); }
-  .writing-side.cricket { background: var(--cricket-green); }
+  .article-card { background: #fff; border: 1px solid var(--border); padding: 1.6rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .article-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+  .article-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .article-tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; font-family: 'Crimson Text', serif; font-weight: 600; }
+  .article-tag.biz { background: rgba(184,149,42,0.12); color: #7a6015; }
+  .article-tag.cric { background: rgba(26,77,46,0.1); color: var(--green); }
+  .article-date { font-size: 0.82rem; color: var(--text-muted); }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 0.7rem; }
+  .article-excerpt { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.2rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .read-more { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
+  .biz-card .read-more { color: var(--gold); }
+  .cric-card .read-more { color: var(--green-light); }
 
-  .writing-side .section-title { color: #fff; }
-  .writing-side .section-label {
-    color: var(--gold-light);
-  }
-  .writing-side.cricket .section-label { color: #a5d6a7; }
+  .empty-state { grid-column: 1/-1; text-align: center; padding: 5rem 2rem; border: 1.5px dashed var(--border); background: var(--cream-dark); }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.35; }
+  .empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 0.6rem; }
+  .empty-state p { color: var(--text-muted); font-size: 0.95rem; max-width: 400px; margin: 0 auto; line-height: 1.6; }
+  .empty-state code { background: var(--cream); padding: 1px 5px; font-size: 0.85rem; border: 1px solid var(--border); }
 
-  .writing-side p { color: rgba(255,255,255,0.72); margin-bottom: 1.1rem; }
+  /* FULL ARTICLE */
+  .article-full { padding: 60px 5% 90px; background: var(--cream); }
+  .article-full-inner { max-width: 720px; margin: 0 auto; }
+  .article-full-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .article-full-inner h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+  .article-rule { width: 50px; height: 2px; margin: 1.2rem 0 2rem; }
+  .article-rule.biz { background: var(--gold); }
+  .article-rule.cric { background: var(--green); }
+  .article-body { font-size: 1.1rem; color: var(--text-mid); line-height: 1.9; }
+  .article-body p { margin-bottom: 1.4rem; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2rem 0 0.8rem; }
 
-  .writing-divider {
-    width: 1px;
-    background: rgba(255,255,255,0.15);
-    position: absolute;
-    top: 10%; bottom: 10%;
-    right: 0;
-  }
-
-  .writing-list { list-style: none; margin-top: 1.5rem; }
-  .writing-list li {
-    color: rgba(255,255,255,0.65);
-    font-size: 0.95rem;
-    padding: 0.5rem 0;
-    border-bottom: 0.5px solid rgba(255,255,255,0.12);
-    display: flex; align-items: center; gap: 10px;
-  }
-  .writing-list li::before {
-    content: '';
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold-light);
-    flex-shrink: 0;
-  }
-  .writing-side.cricket .writing-list li::before { background: #81c784; }
-
-  /* ── CONTACT ── */
-  #contact { background: var(--cream-dark); }
-
-  .contact-inner {
-    max-width: 680px; margin: 0 auto; text-align: center;
-  }
-
-  .contact-inner .section-title { color: var(--navy); }
-
-  .contact-inner p {
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-  }
-
-  .contact-form {
-    display: flex; flex-direction: column; gap: 1rem;
-    text-align: left;
-  }
-
+  /* CONTACT */
+  .contact-section { padding: 90px 5%; background: var(--cream-dark); }
+  .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  .contact-inner > p { color: var(--text-muted); margin-bottom: 2rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
   .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
-
-  label {
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-family: 'Crimson Text', serif;
-  }
-
-  input, textarea, select {
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--border);
-    background: var(--cream);
-    font-family: 'Crimson Text', serif;
-    font-size: 1rem;
-    color: var(--text-dark);
-    outline: none;
-    transition: border-color 0.2s;
-    border-radius: 2px;
-  }
-
-  input:focus, textarea:focus, select:focus {
-    border-color: var(--navy);
-  }
-
+  label { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-family: 'Crimson Text', serif; }
+  input, textarea, select { padding: 0.7rem 1rem; border: 1px solid var(--border); background: var(--cream); font-family: 'Crimson Text', serif; font-size: 1rem; color: var(--text-dark); outline: none; transition: border-color 0.2s; border-radius: 2px; }
+  input:focus, textarea:focus, select:focus { border-color: var(--navy); }
   textarea { min-height: 130px; resize: vertical; }
-
-  .submit-btn {
-    align-self: flex-start;
-    padding: 0.75rem 2.4rem;
-    background: var(--navy);
-    color: var(--gold-light);
-    border: none;
-    font-family: 'Crimson Text', serif;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s;
-    border-radius: 2px;
-  }
+  .submit-btn { align-self: flex-start; padding: 0.75rem 2.4rem; background: var(--navy); color: var(--gold-light); border: none; font-family: 'Crimson Text', serif; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; border-radius: 2px; }
   .submit-btn:hover { background: var(--navy-light); }
+  .contact-note { margin-top: 1.2rem; font-style: italic; font-size: 0.9rem; color: var(--text-muted); text-align: center; }
 
-  .contact-note {
-    margin-top: 1.5rem;
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    text-align: center;
-  }
+  /* FOOTER */
+  footer { background: var(--navy); border-top: 2px solid var(--gold); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-brand { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.1rem; font-weight: 600; }
+  .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    border-top: 2px solid var(--gold);
-    padding: 2.5rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-brand {
-    font-family: 'Playfair Display', serif;
-    color: var(--gold-light);
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-
-  .footer-copy {
-    color: rgba(255,255,255,0.35);
-    font-size: 0.85rem;
-  }
-
-  /* ── ANIMATIONS ── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
   .fade-in.visible { opacity: 1; transform: none; }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 800px) {
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    #writing { grid-template-columns: 1fr; }
-    .writing-divider { display: none; }
+    .hero-sections { flex-direction: column; align-items: center; }
+    .section-card { width: 100%; max-width: 300px; }
     .form-row { grid-template-columns: 1fr; }
-    .nav-links { gap: 1.2rem; }
     footer { flex-direction: column; text-align: center; }
   }
-
-  @media (max-width: 520px) {
-    .nav-links { display: none; }
-  }
+  @media (max-width: 520px) { .nav-links { display: none; } }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">Jayed Insights</a>
+  <button class="nav-brand" onclick="showPage('home')">Jayed Insights</button>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#writing">Writing</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><button id="nav-home" onclick="showPage('home')">Home</button></li>
+    <li><button id="nav-business" onclick="showPage('business')">Business</button></li>
+    <li><button id="nav-cricket" onclick="showPage('cricket')">Cricket</button></li>
+    <li><button onclick="gotoContact()">Contact</button></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">Words that inform &amp; inspire</p>
-  <h1>Jayed <span>Insights</span></h1>
-  <div class="hero-divider"></div>
-  <p class="hero-tagline">Content writing at the intersection of business strategy and the beautiful game of cricket.</p>
-  <div class="hero-pills">
-    <span class="pill pill-business">Business Writing</span>
-    <span class="pill pill-cricket">Cricket Coverage</span>
-  </div>
-  <a href="#about" class="hero-cta">Discover More</a>
-  <div class="hero-scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid">
-    <div class="about-text fade-in">
-      <p class="section-label">About</p>
-      <h2 class="section-title">Two passions.<br>One voice.</h2>
-      <div class="underline-rule"></div>
-      <p>Welcome to <em>Jayed Insights</em> — a content writing platform built on the belief that great writing can illuminate both the boardroom and the boundary rope.</p>
-      <p>Whether you need sharp, authoritative content for your business brand or passionate, informed coverage of cricket's ever-unfolding narratives, this is where precision meets storytelling.</p>
-      <p>Every piece is crafted with research, clarity, and an authentic voice that resonates with the intended audience — because good content is never generic.</p>
-    </div>
-    <div class="about-columns fade-in">
-      <div class="about-card">
-        <div class="about-card-title">
-          Business Writing <span class="tag tag-biz">Business</span>
-        </div>
-        <p>From thought leadership articles and brand copy to market analyses and newsletters — clear, compelling content that builds authority.</p>
+<!-- ══════════ HOME ══════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <p class="hero-eyebrow">Words that inform &amp; inspire</p>
+    <h1>Jayed <span>Insights</span></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Content writing at the intersection of business strategy and the beautiful game of cricket.</p>
+    <div class="hero-sections">
+      <div class="section-card biz" onclick="showPage('business')">
+        <div class="card-icon">📊</div>
+        <div class="card-label">Writing</div>
+        <div class="card-title">Business</div>
+        <div class="card-desc">Thought leadership, brand copy, market analysis &amp; more.</div>
+        <div class="card-arrow">Read articles →</div>
       </div>
-      <div class="about-card cricket">
-        <div class="about-card-title">
-          Cricket Coverage <span class="tag tag-cric">Cricket</span>
-        </div>
-        <p>Match reports, player profiles, tactical breakdowns, and opinion pieces for fans, clubs, and cricket media outlets.</p>
-      </div>
-      <div class="about-card">
-        <div class="about-card-title">What Makes It Different</div>
-        <p>Deep subject-matter knowledge in both domains, combined with a classic editorial style that stands out from AI-generic content.</p>
+      <div class="section-card cric" onclick="showPage('cricket')">
+        <div class="card-icon">🏏</div>
+        <div class="card-label">Writing</div>
+        <div class="card-title">Cricket</div>
+        <div class="card-desc">Match reports, player profiles, tactics &amp; cricket culture.</div>
+        <div class="card-arrow">Read articles →</div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
 
-<!-- WRITING AREAS SPLIT -->
-<section id="writing">
-  <div class="writing-side business fade-in">
-    <div class="writing-divider"></div>
-    <p class="section-label">Expertise</p>
-    <h2 class="section-title">Business Writing</h2>
-    <div class="underline-rule" style="background:var(--gold);"></div>
-    <p>Crafting content that drives credibility, nurtures audiences, and communicates your brand's value with clarity and confidence.</p>
-    <ul class="writing-list">
-      <li>Thought leadership &amp; op-eds</li>
-      <li>Blog posts &amp; long-form articles</li>
-      <li>Brand &amp; website copy</li>
-      <li>Newsletters &amp; email campaigns</li>
-      <li>Product &amp; market analysis pieces</li>
-      <li>LinkedIn &amp; social content</li>
-    </ul>
-  </div>
-  <div class="writing-side cricket fade-in">
-    <p class="section-label">Expertise</p>
-    <h2 class="section-title">Cricket Writing</h2>
-    <div class="underline-rule" style="background:#81c784;"></div>
-    <p>Informed, passionate, and analytically grounded coverage — from grassroots cricket to international stage drama.</p>
-    <ul class="writing-list">
-      <li>Match previews &amp; reports</li>
-      <li>Player profiles &amp; interviews</li>
-      <li>Tactical &amp; statistical analysis</li>
-      <li>Series reviews &amp; opinion pieces</li>
-      <li>Cricket history &amp; feature writing</li>
-      <li>Fantasy cricket &amp; fan guides</li>
-    </ul>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-inner">
-    <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Let's work together</h2>
-    <div class="underline-rule" style="margin: 1rem auto 1.5rem;"></div>
-    <p>Have a project in mind? Whether it's a business brief or a cricket feature, reach out and let's talk.</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="e.g. Rahman Ali" required>
+  <section class="about-section">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Two passions.<br>One voice.</h2>
+        <div class="rule"></div>
+        <p>Welcome to <em>Jayed Insights</em> — a content writing platform built on the belief that great writing can illuminate both the boardroom and the boundary rope.</p>
+        <p>Whether you need sharp, authoritative content for your business brand or passionate, informed coverage of cricket's ever-unfolding narratives, this is where precision meets storytelling.</p>
+        <p>Every piece is crafted with research, clarity, and an authentic voice — because good content is never generic.</p>
+      </div>
+      <div class="about-columns fade-in">
+        <div class="about-card" onclick="showPage('business')">
+          <div class="about-card-title">Business Writing <span class="tag tag-biz">Business</span></div>
+          <p>Thought leadership, brand copy, market analysis &amp; newsletters. <span style="color:var(--gold);font-size:0.85rem;">Browse articles →</span></p>
         </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" required>
+        <div class="about-card cric-card" onclick="showPage('cricket')">
+          <div class="about-card-title">Cricket Coverage <span class="tag tag-cric">Cricket</span></div>
+          <p>Match reports, player profiles, tactical breakdowns &amp; cricket culture. <span style="color:var(--green-light);font-size:0.85rem;">Browse articles →</span></p>
+        </div>
+        <div class="about-card" style="cursor:default;">
+          <div class="about-card-title">What Makes It Different</div>
+          <p>Deep subject-matter knowledge in both domains, combined with a classic editorial style that stands out.</p>
         </div>
       </div>
-      <div class="form-group">
-        <label for="topic">Topic Area</label>
-        <select id="topic">
-          <option value="">— Select one —</option>
-          <option>Business Writing</option>
-          <option>Cricket Writing</option>
-          <option>Both / Not sure</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" placeholder="Tell me about your project, brief, or idea..." required></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-    <p class="contact-note" id="form-confirmation" style="display:none; color: var(--cricket-green); font-weight:600;">✓ Message sent! I'll be in touch shortly.</p>
-    <p class="contact-note">Typically responds within 24 hours.</p>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Jayed Insights</div>
-  <div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div>
-</footer>
+  <section class="contact-section" id="contact-anchor">
+    <div class="contact-inner">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's work together</h2>
+      <div class="rule" style="margin:1rem auto 1.5rem;"></div>
+      <p>Have a project in mind? Whether it's a business brief or a cricket feature, reach out and let's talk.</p>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label for="cname">Your Name</label><input type="text" id="cname" placeholder="e.g. Rahman Ali" required></div>
+          <div class="form-group"><label for="cemail">Email</label><input type="email" id="cemail" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-group">
+          <label for="ctopic">Topic Area</label>
+          <select id="ctopic"><option value="">— Select one —</option><option>Business Writing</option><option>Cricket Writing</option><option>Both / Not sure</option></select>
+        </div>
+        <div class="form-group"><label for="cmsg">Your Message</label><textarea id="cmsg" placeholder="Tell me about your project or idea..." required></textarea></div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      <p class="contact-note" id="form-ok" style="display:none;color:var(--green);font-weight:600;">✓ Message sent! I'll be in touch shortly.</p>
+      <p class="contact-note">Typically responds within 24 hours.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Jayed Insights</div>
+    <div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div>
+  </footer>
+</div>
+
+<!-- ══════════ BUSINESS PAGE ══════════ -->
+<div class="page" id="page-business">
+  <div class="page-header biz-header">
+    <div class="page-header-inner">
+      <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+      <p class="page-eyebrow">Content Writing</p>
+      <h1>Business Writing</h1>
+      <div class="page-rule"></div>
+      <p>Thought leadership, brand strategy, market insights &amp; more.</p>
+    </div>
+  </div>
+  <div class="articles-section">
+    <div class="articles-meta" id="biz-count"></div>
+    <div class="articles-grid" id="biz-grid"></div>
+  </div>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
+</div>
+
+<!-- ══════════ CRICKET PAGE ══════════ -->
+<div class="page" id="page-cricket">
+  <div class="page-header cric-header">
+    <div class="page-header-inner">
+      <button class="back-btn" onclick="showPage('home')">← Back to Home</button>
+      <p class="page-eyebrow">Content Writing</p>
+      <h1>Cricket Writing</h1>
+      <div class="page-rule"></div>
+      <p>Match reports, player profiles, tactical analysis &amp; cricket culture.</p>
+    </div>
+  </div>
+  <div class="articles-section">
+    <div class="articles-meta" id="cric-count"></div>
+    <div class="articles-grid" id="cric-grid"></div>
+  </div>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
+</div>
+
+<!-- ══════════ ARTICLE VIEW ══════════ -->
+<div class="page" id="page-article">
+  <div class="page-header" id="art-header">
+    <div class="page-header-inner">
+      <button class="back-btn" id="art-back">← Back</button>
+      <p class="page-eyebrow" id="art-eyebrow"></p>
+      <h1 id="art-title"></h1>
+      <div class="page-rule" id="art-rule"></div>
+    </div>
+  </div>
+  <div class="article-full">
+    <div class="article-full-inner">
+      <div class="article-full-meta">
+        <span class="article-tag" id="art-tag"></span>
+        <span class="article-date" id="art-date"></span>
+      </div>
+      <div class="article-rule" id="art-divider"></div>
+      <div class="article-body" id="art-body"></div>
+    </div>
+  </div>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
+</div>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
+// ═══════════════════════════════════════════════
+//  ADD YOUR ARTICLES HERE
+//  Copy any object below, fill in title/date/excerpt/body
+//  body can contain HTML tags like <p> <h2> <ul> <li>
+// ═══════════════════════════════════════════════
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.getElementById('form-confirmation').style.display = 'block';
-    e.target.reset();
-    setTimeout(() => { document.getElementById('form-confirmation').style.display = 'none'; }, 5000);
+const businessArticles = [
+  {
+    id: 'b1',
+    title: 'Why Every Business Needs a Clear Content Strategy in 2026',
+    date: 'March 2026',
+    excerpt: 'In an era of information overload, businesses that communicate with clarity and intention cut through the noise. Here\'s why a content strategy is no longer optional.',
+    body: `<p>In an era of information overload, businesses that communicate with clarity and intention cut through the noise. A content strategy is no longer a luxury — it is the backbone of sustainable brand growth.</p>
+<h2>What is a content strategy?</h2>
+<p>A content strategy defines what you say, how you say it, who you say it to, and why. It aligns your messaging with your business goals and your audience's needs.</p>
+<p>Without it, content becomes scattered — blog posts that don't rank, social posts that don't convert, and newsletters nobody opens.</p>
+<h2>The ROI of strategic content</h2>
+<p>Businesses with documented content strategies are significantly more likely to report success in their marketing efforts. The reason is simple: intentional content builds trust, and trust drives conversions.</p>
+<p><em>This is a sample article. Replace this text with your own writing by editing the businessArticles array in the HTML file.</em></p>`
+  },
+  {
+    id: 'b2',
+    title: 'The Art of Thought Leadership: Writing That Builds Authority',
+    date: 'February 2026',
+    excerpt: 'Thought leadership is not about showing off what you know — it\'s about generously sharing insight that helps your audience make better decisions.',
+    body: `<p>Thought leadership is not about showing off what you know. It's about generously sharing insight that helps your audience make better decisions — and in doing so, positioning yourself as the go-to voice in your field.</p>
+<p><em>This is a sample article. Replace this text with your own writing by editing the businessArticles array in the HTML file.</em></p>`
   }
+];
+
+const cricketArticles = [
+  {
+    id: 'c1',
+    title: 'The Geometry of Spin: How Wrist Spinners Deceive the Best Batters',
+    date: 'March 2026',
+    excerpt: 'Wrist spin is perhaps the most beautiful and baffling art in cricket. Understanding the physics behind leg-breaks and googlies reveals why even great batters struggle.',
+    body: `<p>Wrist spin is perhaps the most beautiful and baffling art in cricket. Understanding the geometry behind leg-breaks, googlies, and flippers reveals why even the greatest batters struggle against a quality wrist spinner on a responsive surface.</p>
+<h2>The physics of turn</h2>
+<p>When a wrist spinner releases the ball, the wrist rotates to impart revolutions across the seam at an angle. This creates Magnus force — a lateral deflection in the air — followed by grip off the surface that can take the ball dramatically across a batter's line of vision.</p>
+<p><em>This is a sample article. Replace this text with your own writing by editing the cricketArticles array in the HTML file.</em></p>`
+  },
+  {
+    id: 'c2',
+    title: 'Test Cricket in the T20 Era: Still Relevant, Still Supreme',
+    date: 'January 2026',
+    excerpt: 'Some feared that the rise of franchise T20 leagues would hollow out Test cricket. Instead, the oldest format has found a passionate new audience.',
+    body: `<p>Some feared that the rise of franchise T20 leagues would hollow out Test cricket. Instead, the oldest format has found a new and passionate audience — particularly among younger fans who grew up on the shorter format and came to Test cricket through curiosity.</p>
+<p><em>This is a sample article. Replace this text with your own writing by editing the cricketArticles array in the HTML file.</em></p>`
+  }
+];
+
+// ── PAGE NAVIGATION ──
+let articleOrigin = 'business';
+
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo(0, 0);
+  document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active-nav'));
+  const n = document.getElementById('nav-' + name);
+  if (n) n.classList.add('active-nav');
+  if (name === 'business') renderGrid('biz', businessArticles);
+  if (name === 'cricket') renderGrid('cric', cricketArticles);
+}
+
+function gotoContact() {
+  showPage('home');
+  setTimeout(() => document.getElementById('contact-anchor').scrollIntoView({ behavior: 'smooth' }), 80);
+}
+
+// ── RENDER CARDS ──
+function renderGrid(type, articles) {
+  const isBiz = type === 'biz';
+  document.getElementById(type + '-count').textContent = articles.length + ' article' + (articles.length !== 1 ? 's' : '');
+  const grid = document.getElementById(type + '-grid');
+  if (!articles.length) {
+    grid.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">${isBiz ? '📝' : '🏏'}</div>
+      <h3>No articles yet</h3>
+      <p>Add your articles to the <code>${isBiz ? 'businessArticles' : 'cricketArticles'}</code> array in the HTML file — they will appear here automatically.</p>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = articles.map(a => `
+    <div class="article-card ${isBiz ? 'biz-card' : 'cric-card'}" onclick="openArticle('${a.id}','${type}')">
+      <div class="article-card-top">
+        <span class="article-tag ${isBiz ? 'biz' : 'cric'}">${isBiz ? 'Business' : 'Cricket'}</span>
+        <span class="article-date">${a.date}</span>
+      </div>
+      <div class="article-title">${a.title}</div>
+      <div class="article-excerpt">${a.excerpt}</div>
+      <div class="read-more">Read article →</div>
+    </div>`).join('');
+}
+
+// ── OPEN ARTICLE ──
+function openArticle(id, type) {
+  const isBiz = type === 'biz';
+  const article = (isBiz ? businessArticles : cricketArticles).find(a => a.id === id);
+  if (!article) return;
+  articleOrigin = isBiz ? 'business' : 'cricket';
+  document.getElementById('art-header').className = 'page-header ' + (isBiz ? 'biz-header' : 'cric-header');
+  document.getElementById('art-back').onclick = () => showPage(articleOrigin);
+  document.getElementById('art-eyebrow').textContent = isBiz ? 'Business Writing' : 'Cricket Writing';
+  document.getElementById('art-title').textContent = article.title;
+  document.getElementById('art-rule').style.background = isBiz ? 'var(--gold)' : '#4caf50';
+  document.getElementById('art-tag').textContent = isBiz ? 'Business' : 'Cricket';
+  document.getElementById('art-tag').className = 'article-tag ' + (isBiz ? 'biz' : 'cric');
+  document.getElementById('art-date').textContent = article.date;
+  document.getElementById('art-divider').className = 'article-rule ' + (isBiz ? 'biz' : 'cric');
+  document.getElementById('art-body').innerHTML = article.body;
+  showPage('article');
+}
+
+// ── CONTACT ──
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-ok').style.display = 'block';
+  e.target.reset();
+  setTimeout(() => document.getElementById('form-ok').style.display = 'none', 5000);
+}
+
+// ── FADE IN ──
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+renderGrid('biz', businessArticles);
+renderGrid('cric', cricketArticles);
 </script>
 </body>
 </html>
