@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: "https://jayedinsight.me/.netlify/identity"
+  gateway_url: "https://jayedinsight.me/.netlify/git"
 
 media_folder: "images/uploads"
 
