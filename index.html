@@ -702,6 +702,17 @@ function renderRelatedArticles(type, currentId) {
     </div>
   `).join('');
 }
+window.addEventListener('load', () => {
+  const hash = window.location.hash;
+
+  if (hash.startsWith('#article/')) {
+    const parts = hash.replace('#article/', '').split('/');
+    const type = parts[0];
+    const id = parts[1];
+
+    openArticle(id, type);
+  }
+});
 </script>
 </body>
 </html>
