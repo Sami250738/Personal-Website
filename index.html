@@ -661,8 +661,8 @@ function openArticle(id, type) {
   document.getElementById('art-date').textContent = article.date;
   document.getElementById('art-divider').className = 'article-rule ' + (isBiz ? 'biz' : 'cric');
   document.getElementById('art-body').innerHTML = article.body;
+  showPage('article');
   window.location.hash = 'article/' + type + '/' + id;
-showPage('article');
 }
 
 function handleSubmit(e) {
