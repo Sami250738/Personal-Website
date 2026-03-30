@@ -360,7 +360,7 @@
         <p class="about-title">Business &amp; Cricket Content Writer · Marketing Professional</p>
         <p class="bio">Business graduate with hands-on experience in sales execution, lead generation, merchant onboarding, and marketing. Proven track record of achieving BDT 700k sales within three months and building structured lead-to-client systems generating consistent monthly conversions. Strong interest in marketing and sales.</p>
         <div class="about-me-contacts">
-          <a href="/cdn-cgi/l/email-protection#c8a9aabda2a9a0adacbba9a5a188afa5a9a1a4e6aba7a5" class="about-contact-pill">✉ <span class="__cf_email__" data-cfemail="107172657a7178757463717d7950777d71797c3e737f7d">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#3b5a594e515a535e5f485a56527b5c565a525715585456" class="about-contact-pill">✉ <span class="__cf_email__" data-cfemail="b5d4d7c0dfd4ddd0d1c6d4d8dcf5d2d8d4dcd99bd6dad8">[email&#160;protected]</span></a>
           <a href="tel:+8801885317799" class="about-contact-pill">📞 +880 1885 317799</a>
           <a href="https://www.linkedin.com/in/abu-jayed-sami-055bb8221/" target="_blank" class="about-contact-pill">LinkedIn →</a>
         </div>
@@ -708,14 +708,9 @@ window.addEventListener('load', () => {
     const parts = hash.split('/');
     const type = parts[1];
     const id = parts[2];
-    if (type && id) {
-      openArticle(id, type);
-      return;
-    }
+    if (type && id) { openArticle(id, type); return; }
   }
-  if (hash === 'business' || hash === 'cricket' || hash === 'about' || hash === 'home') {
-    showPage(hash);
-    return;
+  if (hash === 'business' || hash === 'cricket' || hash === 'about') {
+    showPage(hash); return;
   }
-  showPage('home');
 });
