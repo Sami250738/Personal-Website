@@ -17,19 +17,14 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'Crimson Text', Georgia, serif; background: var(--cream); color: var(--text-dark); font-size: 18px; line-height: 1.75; }
-
   .page { display: none; }
   .page.active { display: block; }
-
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--navy); border-bottom: 2px solid var(--gold); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 64px; }
   .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.04em; cursor: pointer; border: none; background: none; }
   .nav-links { display: flex; gap: 1.8rem; list-style: none; }
   .nav-links button { background: none; border: none; cursor: pointer; color: #c9c4b8; font-family: 'Crimson Text', serif; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; padding: 0; }
   .nav-links button:hover, .nav-links button.active-nav { color: var(--gold-light); }
   .nav-links button.active-nav { border-bottom: 1.5px solid var(--gold-light); padding-bottom: 2px; }
-
-  /* HERO */
   .hero { min-height: 100vh; background: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,149,42,0.06) 59px, rgba(184,149,42,0.06) 60px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(184,149,42,0.06) 79px, rgba(184,149,42,0.06) 80px); pointer-events: none; }
   .hero-eyebrow { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
@@ -37,7 +32,6 @@
   .hero h1 span { color: var(--gold-light); }
   .hero-divider { width: 60px; height: 2px; background: var(--gold); margin: 1.4rem auto; }
   .hero-tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.3rem; color: #a9a49a; max-width: 540px; margin-bottom: 2.8rem; }
-
   .hero-sections { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
   .section-card { width: 220px; padding: 1.8rem 1.5rem; cursor: pointer; border: 1.5px solid rgba(255,255,255,0.1); transition: transform 0.25s, background 0.25s; text-align: left; background: rgba(255,255,255,0.04); }
   .section-card:hover { transform: translateY(-4px); }
@@ -54,12 +48,9 @@
   .card-arrow { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
   .section-card.biz .card-arrow { color: var(--gold-light); }
   .section-card.cric .card-arrow { color: #81c784; }
-
   .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.25); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 6px; }
   .scroll-arrow { width: 14px; height: 14px; border-right: 1.5px solid rgba(255,255,255,0.25); border-bottom: 1.5px solid rgba(255,255,255,0.25); transform: rotate(45deg); animation: bounce 1.6s ease-in-out infinite; }
   @keyframes bounce { 0%,100%{transform:rotate(45deg) translateY(0)} 50%{transform:rotate(45deg) translateY(5px)} }
-
-  /* ABOUT */
   .about-section { padding: 90px 5%; background: var(--cream); }
   .about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
   .section-label { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; font-family: 'Crimson Text', serif; }
@@ -76,8 +67,6 @@
   .tag-biz { background: var(--gold); color: var(--navy); }
   .tag-cric { background: var(--green); color: #c8e6c9; }
   .about-card p { font-size: 0.95rem; color: var(--text-muted); }
-
-  /* PAGE HEADER */
   .page-header { padding: 100px 5% 50px; position: relative; overflow: hidden; }
   .page-header.biz-header { background: var(--navy); }
   .page-header.cric-header { background: var(--green); }
@@ -93,12 +82,9 @@
   .page-rule { width: 50px; height: 2px; margin: 1rem 0; }
   .biz-header .page-rule { background: var(--gold); }
   .cric-header .page-rule { background: #4caf50; }
-
-  /* ARTICLES */
   .articles-section { padding: 60px 5% 90px; background: var(--cream); }
   .articles-meta { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
   .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.8rem; }
-
   .article-card { background: #fff; border: 1px solid var(--border); padding: 1.6rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
   .article-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
   .article-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
@@ -111,14 +97,11 @@
   .read-more { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; }
   .biz-card .read-more { color: var(--gold); }
   .cric-card .read-more { color: var(--green-light); }
-
   .empty-state { grid-column: 1/-1; text-align: center; padding: 5rem 2rem; border: 1.5px dashed var(--border); background: var(--cream-dark); }
   .empty-icon { font-size: 2.5rem; margin-bottom: 1rem; opacity: 0.35; }
   .empty-state h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--navy); margin-bottom: 0.6rem; }
   .empty-state p { color: var(--text-muted); font-size: 0.95rem; max-width: 400px; margin: 0 auto; line-height: 1.6; }
   .empty-state code { background: var(--cream); padding: 1px 5px; font-size: 0.85rem; border: 1px solid var(--border); }
-
-  /* FULL ARTICLE */
   .article-full { padding: 60px 5% 90px; background: var(--cream); }
   .article-full-inner { max-width: 720px; margin: 0 auto; }
   .article-full-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
@@ -129,8 +112,6 @@
   .article-body { font-size: 1.1rem; color: var(--text-mid); line-height: 1.9; }
   .article-body p { margin-bottom: 1.4rem; }
   .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2rem 0 0.8rem; }
-
-  /* CONTACT */
   .contact-section { padding: 90px 5%; background: var(--cream-dark); }
   .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
   .contact-inner > p { color: var(--text-muted); margin-bottom: 2rem; }
@@ -144,21 +125,70 @@
   .submit-btn { align-self: flex-start; padding: 0.75rem 2.4rem; background: var(--navy); color: var(--gold-light); border: none; font-family: 'Crimson Text', serif; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; border-radius: 2px; }
   .submit-btn:hover { background: var(--navy-light); }
   .contact-note { margin-top: 1.2rem; font-style: italic; font-size: 0.9rem; color: var(--text-muted); text-align: center; }
-
-  /* FOOTER */
   footer { background: var(--navy); border-top: 2px solid var(--gold); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-brand { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.1rem; font-weight: 600; }
   .footer-copy { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
-
   .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
   .fade-in.visible { opacity: 1; transform: none; }
-
+  /* ABOUT ME PAGE */
+  .about-me-header { padding: 100px 5% 50px; background: var(--navy); position: relative; overflow: hidden; }
+  .about-me-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,149,42,0.06) 59px, rgba(184,149,42,0.06) 60px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(184,149,42,0.06) 79px, rgba(184,149,42,0.06) 80px); pointer-events: none; }
+  .about-me-header-inner { max-width: 1100px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; align-items: center; }
+  .about-me-photo-wrap { position: relative; }
+  .about-me-photo { width: 200px; height: 200px; border-radius: 4px; object-fit: cover; object-position: top; border: 3px solid var(--gold); display: block; }
+  .about-me-photo-placeholder { width: 200px; height: 200px; border-radius: 4px; background: var(--navy-light); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-light); }
+  .about-me-badge { position: absolute; bottom: -10px; right: -10px; background: var(--gold); color: var(--navy); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; font-family: 'Crimson Text', serif; font-weight: 600; }
+  .about-me-intro .page-eyebrow { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Crimson Text', serif; }
+  .about-me-intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 0.3rem; }
+  .about-title { font-family: 'EB Garamond', serif; font-style: italic; color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1rem; }
+  .bio { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 580px; margin-bottom: 1.5rem; }
+  .about-me-contacts { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .about-contact-pill { padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); font-size: 0.82rem; font-family: 'Crimson Text', serif; letter-spacing: 0.05em; text-decoration: none; transition: border-color 0.2s, color 0.2s; border-radius: 2px; }
+  .about-contact-pill:hover { border-color: var(--gold); color: var(--gold-light); }
+  .about-me-body { padding: 60px 5% 90px; background: var(--cream); }
+  .about-me-body-inner { max-width: 1100px; margin: 0 auto; }
+  .about-me-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .about-block-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold); display: flex; align-items: center; gap: 8px; }
+  .about-block-title.green { border-bottom-color: var(--green); }
+  .exp-item { margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 0.5px solid var(--border); }
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
+  .exp-role { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+  .exp-date { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; font-family: 'Crimson Text', serif; }
+  .exp-company { font-size: 0.88rem; color: var(--gold); font-family: 'Crimson Text', serif; margin-bottom: 0.4rem; font-style: italic; }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li { font-size: 0.9rem; color: var(--text-muted); padding: 0.2rem 0; padding-left: 14px; position: relative; line-height: 1.5; }
+  .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; top: 0.35rem; }
+  .edu-item { background: var(--cream-dark); padding: 1.2rem; border-left: 3px solid var(--gold); margin-bottom: 1rem; }
+  .edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .edu-uni { font-size: 0.9rem; color: var(--gold); font-style: italic; margin-bottom: 0.2rem; }
+  .edu-meta { font-size: 0.82rem; color: var(--text-muted); }
+  .skills-group { margin-bottom: 1.2rem; }
+  .skills-group-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; font-family: 'Crimson Text', serif; }
+  .skills-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .skill-pill { padding: 0.3rem 0.8rem; background: var(--cream-dark); border: 1px solid var(--border); font-size: 0.82rem; color: var(--text-mid); font-family: 'Crimson Text', serif; border-radius: 2px; }
+  .skill-pill.gold { background: rgba(184,149,42,0.1); border-color: rgba(184,149,42,0.3); color: #7a6015; }
+  .achievement-list { list-style: none; }
+  .achievement-list li { font-size: 0.92rem; color: var(--text-mid); padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .achievement-list li:last-child { border-bottom: none; }
+  .achievement-list li::before { content: '★'; color: var(--gold); font-size: 0.7rem; margin-top: 0.3rem; flex-shrink: 0; }
+  .extra-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 0.5px solid var(--border); }
+  .extra-item:last-child { border-bottom: none; }
+  .extra-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.2rem; flex-wrap: wrap; }
+  .extra-role { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 600; color: var(--navy); }
+  .extra-org { font-size: 0.85rem; color: var(--green-light); font-style: italic; margin-bottom: 0.3rem; }
   @media (max-width: 800px) {
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-sections { flex-direction: column; align-items: center; }
     .section-card { width: 100%; max-width: 300px; }
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
+    .about-me-header-inner { grid-template-columns: 1fr; text-align: center; }
+    .about-me-photo { margin: 0 auto; }
+    .about-me-photo-placeholder { margin: 0 auto; }
+    .about-me-contacts { justify-content: center; }
+    .about-me-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-me-badge { right: auto; left: 50%; transform: translateX(-50%); }
   }
   @media (max-width: 520px) { .nav-links { display: none; } }
 </style>
@@ -171,12 +201,12 @@
     <li><button id="nav-home" onclick="showPage('home')">Home</button></li>
     <li><button id="nav-business" onclick="showPage('business')">Business</button></li>
     <li><button id="nav-cricket" onclick="showPage('cricket')">Cricket</button></li>
-   <li><button id="nav-about" onclick="showPage('about')">About</button></li>
-   <li><button onclick="gotoContact()">Contact</button></li>
+    <li><button id="nav-about" onclick="showPage('about')">About</button></li>
+    <li><button onclick="gotoContact()">Contact</button></li>
   </ul>
 </nav>
 
-<!-- ══════════ HOME ══════════ -->
+<!-- HOME -->
 <div class="page active" id="page-home">
   <section class="hero">
     <p class="hero-eyebrow">Words that inform &amp; inspire</p>
@@ -254,14 +284,10 @@
       <p class="contact-note">Typically responds within 24 hours.</p>
     </div>
   </section>
-
-  <footer>
-    <div class="footer-brand">Jayed Insights</div>
-    <div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div>
-  </footer>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div></footer>
 </div>
 
-<!-- ══════════ BUSINESS PAGE ══════════ -->
+<!-- BUSINESS PAGE -->
 <div class="page" id="page-business">
   <div class="page-header biz-header">
     <div class="page-header-inner">
@@ -279,7 +305,7 @@
   <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
 </div>
 
-<!-- ══════════ CRICKET PAGE ══════════ -->
+<!-- CRICKET PAGE -->
 <div class="page" id="page-cricket">
   <div class="page-header cric-header">
     <div class="page-header-inner">
@@ -297,7 +323,7 @@
   <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
 </div>
 
-<!-- ══════════ ARTICLE VIEW ══════════ -->
+<!-- ARTICLE VIEW -->
 <div class="page" id="page-article">
   <div class="page-header" id="art-header">
     <div class="page-header-inner">
@@ -320,13 +346,135 @@
   <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights.</div></footer>
 </div>
 
-<script>
-// ═══════════════════════════════════════════════
-//  ADD YOUR ARTICLES HERE
-//  Copy any object below, fill in title/date/excerpt/body
-//  body can contain HTML tags like <p> <h2> <ul> <li>
-// ═══════════════════════════════════════════════
+<!-- ABOUT PAGE -->
+<div class="page" id="page-about">
+  <div class="about-me-header">
+    <div class="about-me-header-inner">
+      <div class="about-me-photo-wrap">
+        <img src="profile.png" class="about-me-photo" alt="Md. Abu Jayed" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="about-me-photo-placeholder" style="display:none;">AJ</div>
+        <div class="about-me-badge">Content Writer</div>
+      </div>
+      <div class="about-me-intro">
+        <p class="page-eyebrow">About Me</p>
+        <h1>Md. Abu Jayed</h1>
+        <p class="about-title">Business &amp; Cricket Content Writer · Marketing Professional</p>
+        <p class="bio">Business graduate with hands-on experience in sales execution, lead generation, merchant onboarding, and marketing. Proven track record of achieving BDT 700k sales within three months and building structured lead-to-client systems generating consistent monthly conversions. Strong interest in marketing and sales.</p>
+        <div class="about-me-contacts">
+          <a href="mailto:abujahedsami@gmail.com" class="about-contact-pill">✉ abujahedsami@gmail.com</a>
+          <a href="tel:+8801885317799" class="about-contact-pill">📞 +880 1885 317799</a>
+          <a href="https://www.linkedin.com/in/abu-jayed-sami-055bb8221/" target="_blank" class="about-contact-pill">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-me-body">
+    <div class="about-me-body-inner">
+      <div class="about-me-grid">
+        <div>
+          <div class="about-block-title">Work Experience</div>
+          <div class="exp-item">
+            <div class="exp-top"><div class="exp-role">Sales Intern</div><div class="exp-date">Sep 2025 – Nov 2025</div></div>
+            <div class="exp-company">Brand Craftar</div>
+            <ul class="exp-bullets">
+              <li>Conducted business &amp; market analysis for 2 client companies on branding strategies</li>
+              <li>Developed customised pitch decks, onboarding 5 clients</li>
+              <li>Built a sales pipeline generating 20–40 qualified leads/month at 10–20% close rate</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <div class="exp-top"><div class="exp-role">Marketing Intern</div><div class="exp-date">Jun 2025 – Oct 2025</div></div>
+            <div class="exp-company">Pacific Asia Travel Association (PATA)</div>
+            <ul class="exp-bullets">
+              <li>Communicated with Airbnb &amp; BBC stakeholders regarding PTM 2025</li>
+              <li>Developed monthly promotional campaign including video interviews &amp; reels</li>
+              <li>Planned bi-weekly newsletter content, blog articles, and social media posts</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <div class="exp-top"><div class="exp-role">Branding &amp; Marketing Executive</div><div class="exp-date">Mar 2024 – Aug 2024</div></div>
+            <div class="exp-company">Data Solution 360 (Part-time)</div>
+            <ul class="exp-bullets">
+              <li>Built partnerships with 30+ university organisations through MOU signings</li>
+              <li>Increased organic reach by 400% (8K → 40K followers)</li>
+              <li>Achieved BDT 700k in course sales revenue within the 3rd month</li>
+            </ul>
+          </div>
+          <div class="exp-item">
+            <div class="exp-top"><div class="exp-role">Deputy Head of Corporate Affairs</div><div class="exp-date">Aug 2023 – Sep 2023</div></div>
+            <div class="exp-company">Greenaugurate Event</div>
+            <ul class="exp-bullets">
+              <li>Secured BDT 500,000 through sponsorship proposals to corporate partners</li>
+              <li>Coordinated judges' panels for a national sustainability-focused case competition</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="about-block-title">Education</div>
+          <div class="edu-item">
+            <div class="edu-degree">BBA in Tourism &amp; Hospitality Management</div>
+            <div class="edu-uni">University of Dhaka</div>
+            <div class="edu-meta">CGPA: 3.40 &nbsp;·&nbsp; Feb 2022 – Jan 2026</div>
+          </div>
+          <div class="about-block-title" style="margin-top:2rem;">Skills</div>
+          <div class="skills-group">
+            <div class="skills-group-label">Technical</div>
+            <div class="skills-pills">
+              <span class="skill-pill gold">Graphic Design</span><span class="skill-pill gold">Canva</span><span class="skill-pill gold">Power BI</span><span class="skill-pill">MS Excel</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Asana</span><span class="skill-pill">Google Workspace</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="skills-group-label">Soft Skills</div>
+            <div class="skills-pills">
+              <span class="skill-pill">Project Management</span><span class="skill-pill">Lead Management</span><span class="skill-pill">Market Research</span><span class="skill-pill">Stakeholder Management</span><span class="skill-pill">Event Management</span><span class="skill-pill">Critical Thinking</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="skills-group-label">Interests</div>
+            <div class="skills-pills">
+              <span class="skill-pill gold">Cricket</span><span class="skill-pill gold">Branding</span><span class="skill-pill gold">Marketing</span><span class="skill-pill">Astronomy</span><span class="skill-pill">Football</span><span class="skill-pill">Movies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-me-grid">
+        <div>
+          <div class="about-block-title green">Achievements</div>
+          <ul class="achievement-list">
+            <li>Advent HR 2.0, HR Competition (BUP) — 1st Runner Up</li>
+            <li>Lean Sprint 2.0 (AIPE, BUET) — Finalist</li>
+            <li>ISCEA Prize Global Supply Chain Case Competition — 90% Scholarship Recipient</li>
+            <li>Powerpreneur (DUEDC) — Finalist</li>
+            <li>Youth School for Social Entrepreneurs — "Popular Writer of the Month" (Dec &amp; Feb)</li>
+          </ul>
+        </div>
+        <div>
+          <div class="about-block-title green">Extracurricular</div>
+          <div class="extra-item">
+            <div class="extra-top"><div class="extra-role">Head of Corporate Affairs</div><div class="exp-date">May 2023 – Present</div></div>
+            <div class="extra-org">PATA Bangladesh Dhaka University Student Chapter</div>
+            <ul class="exp-bullets">
+              <li>Organised Career Familiarization Sessions with industry professionals</li>
+              <li>Planned World Tourism Day 2024 panel discussion on sustainability</li>
+              <li>Led recruitment process for new batch of members</li>
+            </ul>
+          </div>
+          <div class="extra-item">
+            <div class="extra-top"><div class="extra-role">Deputy Head of Corporate Affairs</div><div class="exp-date">Aug 2023 – Sep 2023</div></div>
+            <div class="extra-org">Greenaugurate Event</div>
+            <ul class="exp-bullets">
+              <li>Pitched sponsorships securing BDT 500,000 from corporate partners</li>
+              <li>Managed end-to-end logistics for national sustainability case competition</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div></footer>
+</div>
 
+<script>
 const businessArticles = [
   {
     id: 'b1',
@@ -339,7 +487,7 @@ const businessArticles = [
 <p>Without it, content becomes scattered — blog posts that don't rank, social posts that don't convert, and newsletters nobody opens.</p>
 <h2>The ROI of strategic content</h2>
 <p>Businesses with documented content strategies are significantly more likely to report success in their marketing efforts. The reason is simple: intentional content builds trust, and trust drives conversions.</p>
-<p><em>This is a sample article. Replace this text with your own writing by editing the businessArticles array in the HTML file.</em></p>`
+<p><em>Replace this with your own writing.</em></p>`
   },
   {
     id: 'b2',
@@ -347,89 +495,58 @@ const businessArticles = [
     date: 'February 2026',
     excerpt: 'Thought leadership is not about showing off what you know — it\'s about generously sharing insight that helps your audience make better decisions.',
     body: `<p>Thought leadership is not about showing off what you know. It's about generously sharing insight that helps your audience make better decisions — and in doing so, positioning yourself as the go-to voice in your field.</p>
-<p><em>This is a sample article. Replace this text with your own writing by editing the businessArticles array in the HTML file.</em></p>`
+<p><em>Replace this with your own writing.</em></p>`
   }
 ];
 
 const cricketArticles = [
   {
-  id: 'c1',
-  title: 'Test Cricket in the T20 Era: Still Relevant, Still Supreme',
-  date: 'March 2026',
-  excerpt: 'T20 was supposed to kill Test cricket. Instead it made it better. Here is the story of how the oldest format found its second wind — and why it remains, stubbornly, supreme.',
-  body: `
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Lord%27s_Cricket_Ground_-_panoramio_%281%29.jpg/1280px-Lord%27s_Cricket_Ground_-_panoramio_%281%29.jpg" style="width:100%; margin:1.5rem 0; border-radius:4px;" alt="Lord's Cricket Ground">
+    id: 'c1',
+    title: 'Test Cricket in the T20 Era: Still Relevant, Still Supreme',
+    date: 'March 2026',
+    excerpt: 'T20 was supposed to kill Test cricket. Instead it made it better. Here is the story of how the oldest format found its second wind — and why it remains, stubbornly, supreme.',
+    body: `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Lord%27s_Cricket_Ground_-_panoramio_%281%29.jpg/1280px-Lord%27s_Cricket_Ground_-_panoramio_%281%29.jpg" style="width:100%; margin:1.5rem 0; border-radius:4px;" alt="Lord's Cricket Ground">
 <p style="font-size:0.82rem; color:#6b6b6b; text-align:center; margin-top:-1rem; margin-bottom:2rem;"><em>Lord's Cricket Ground — the home of cricket, and the heartbeat of the Test format.</em></p>
-
-<p>There is a moment in Test cricket that no other format can manufacture. It arrives somewhere around the third afternoon, when a batting side has been ground down to the bone, when the light is fading just slightly and the pitch is beginning to show its age. A fast bowler marks his run-up. The batsman at the crease has been there for three hours. The crowd-those who have stayed - holds its breath.</p>
-
+<p>There is a moment in Test cricket that no other format can manufacture. It arrives somewhere around the third afternoon, when a batting side has been ground down to the bone, when the light is fading just slightly and the pitch is beginning to show its age. A fast bowler marks his run-up. The batsman at the crease has been there for three hours. The crowd — those who have stayed — holds its breath.</p>
 <p>Nothing happens for a moment. Then everything does.</p>
-
-<p>That moment-stretched, earned, soaked in tension - is why Test cricket is still here. And not merely surviving. Thriving.</p>
-
+<p>That moment — stretched, earned, soaked in tension — is why Test cricket is still here. And not merely surviving. Thriving.</p>
 <h2>The Death That Never Came</h2>
-
-<p>When the Indian Premier League launched in 2008, the obituaries for Test cricket were already being drafted. Franchise T20 leagues promised everything the modern attention economy demanded big hits, loud music, results in three hours, and celebrity in abundance. Analysts warned that a generation raised on this sugar rush would have no patience for the five-day game.</p>
-
+<p>When the Indian Premier League launched in 2008, the obituaries for Test cricket were already being drafted. Franchise T20 leagues promised everything the modern attention economy demanded — big hits, loud music, results in three hours, and celebrity in abundance. Analysts warned that a generation raised on this sugar rush would have no patience for the five-day game.</p>
 <p>They were wrong. Gloriously, fascinatingly wrong.</p>
-
-<p>Test cricket's global viewership has not collapsed. In England, Australia, and India, marquee Test series still command prime television slots and sell out grounds weeks in advance. The 2023 Ashes drew audiences that rivalled major football fixtures in England. The Border-Gavaskar Trophy between India and Australia has become one of sport's great recurring dramas - a series that stops a continent.</p>
-
+<p>Test cricket's global viewership has not collapsed. In England, Australia, and India, marquee Test series still command prime television slots and sell out grounds weeks in advance. The 2023 Ashes drew audiences that rivalled major football fixtures in England. The Border-Gavaskar Trophy between India and Australia has become one of sport's great recurring dramas — a series that stops a continent.</p>
 <p>The death that was promised never came. What came instead was something more interesting: a reinvention.</p>
-
 <h2>What T20 Actually Did to Test Cricket</h2>
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Ben_Stokes_batting_2023.jpg/1280px-Ben_Stokes_batting_2023.jpg" style="width:100%; margin:1.5rem 0; border-radius:4px;" alt="Ben Stokes batting">
 <p style="font-size:0.82rem; color:#6b6b6b; text-align:center; margin-top:-1rem; margin-bottom:2rem;"><em>Ben Stokes — the embodiment of modern Test cricket's fearless, T20-influenced aggression.</em></p>
-
 <p>Here is the paradox nobody anticipated: T20 cricket did not kill Test cricket. It made it better.</p>
-
-<p>The influence flows in both directions, but the transformation of Test batting has been the most visible. Batsmen schooled in franchise T20 - where scoring at under a run a ball is considered underperformance - have brought that aggression back to the long form. The result is Test cricket played at a pace and with an intent that would have seemed reckless to previous generations.</p>
-
-<p>England's "Bazball" philosophy under Ben Stokes and Brendon McCullum is the clearest expression of this shift. Where Test teams once absorbed pressure quietly, building occupancy at the crease like a slow investment, England now attack relentlessly - treating every session as an opportunity to impose rather than endure. Their remarkable run of comebacks from seemingly impossible positions has made them compulsive viewing.</p>
-
-<p>India, too, have embraced structured aggression. Rishabh Pant - a T20 product if ever there was one played some of the most extraordinary Test innings of recent years, his instinct for improvisation sitting alongside genuine technical solidity. He is the embodiment of what modern Test batting looks like: T20-inflected, but not T20-reduced.</p>
-
+<p>The influence flows in both directions, but the transformation of Test batting has been the most visible. Batsmen schooled in franchise T20 — where scoring at under a run a ball is considered underperformance — have brought that aggression back to the long form. The result is Test cricket played at a pace and with an intent that would have seemed reckless to previous generations.</p>
+<p>England's "Bazball" philosophy under Ben Stokes and Brendon McCullum is the clearest expression of this shift. Where Test teams once absorbed pressure quietly, England now attack relentlessly — treating every session as an opportunity to impose rather than endure.</p>
+<p>India, too, have embraced structured aggression. Rishabh Pant — a T20 product if ever there was one — played some of the most extraordinary Test innings of recent years, his instinct for improvisation sitting alongside genuine technical solidity.</p>
 <p>The game is faster now. More runs are scored, declarations come earlier, results are more frequent. Paradoxically, this has made the five-day format more dramatic, not less.</p>
-
 <h2>The Young Fan Question</h2>
-
-<p>The most persistent concern about Test cricket's future is demographic. If young fans are raised on T20, will they ever develop an appetite for the longer form?</p>
-
-<p>The evidence, increasingly, suggests yes but through a different pathway than before.</p>
-
-<p>A generation ago, a fan typically encountered Test cricket first, then T20. Today the journey is often reversed. A twelve-year-old might fall in love with cricket watching an IPL final, follow their favourite player, and then — out of curiosity — seek out that player's Test performances. They watch a Virat Kohli hundred at Lord's on YouTube. They see Ben Duckett rescue an impossible chase. They encounter the depth of narrative that only five days can produce, and something clicks.</p>
-
+<p>The most persistent concern about Test cricket's future is demographic. If young fans are raised on T20, will they ever develop an appetite for the longer form? The evidence, increasingly, suggests yes — but through a different pathway than before.</p>
+<p>A twelve-year-old might fall in love with cricket watching an IPL final, follow their favourite player, and then — out of curiosity — seek out that player's Test performances. They watch a Virat Kohli hundred at Lord's on YouTube. They encounter the depth of narrative that only five days can produce, and something clicks.</p>
 <p>Test cricket does not need to compete with T20 for the same audience. It needs to be the destination that T20 fans eventually discover — the deeper room in a house they first entered through a different door.</p>
-
 <h2>The Economy of Meaning</h2>
-
-<p>There is something else Test cricket offers that no shortened format can replicate: the economy of meaning.</p>
-
 <p>In a T20 match, a dropped catch is unfortunate. In a Test match, a dropped catch on day one can decide the series by day five. Every delivery, every session, every decision accumulates — and the weight of that accumulation is what creates the emotional architecture that fans carry with them for years.</p>
-
-<p>Ask any cricket follower about their most vivid memories and they will reach, almost always, for a Test match. The tied Test at Brisbane in 1960. Lara's 400 in Antigua. Flintoff consoling Brett Lee at Edgbaston in 2005. These are not just sporting moments — they are cultural artefacts, stories told and retold across generations.</p>
-
 <p>T20 produces highlights. Test cricket produces history.</p>
-
 <h2>Still Supreme</h2>
-
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WTC_Final_2023_-_Australia_vs_India_%28cropped%29.jpg/1280px-WTC_Final_2023_-_Australia_vs_India_%28cropped%29.jpg" style="width:100%; margin:1.5rem 0; border-radius:4px;" alt="World Test Championship Final">
 <p style="font-size:0.82rem; color:#6b6b6b; text-align:center; margin-top:-1rem; margin-bottom:2rem;"><em>The ICC World Test Championship Final — giving the format a tournament narrative it long deserved.</em></p>
-
 <p>Test cricket was never going to disappear. But the story of the last two decades is better than mere survival — it is a story of adaptation, reinvention, and a quiet confidence in what the format uniquely offers.</p>
+<p>T20 brought urgency and spectacle to the sport. Test cricket absorbed those lessons, sharpened itself against them, and emerged not diminished but clarified.</p>
+<p>Other formats entertain. Test cricket endures. And in enduring, it remains — still, stubbornly, magnificently — supreme.</p>
+<p style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid #d6cebf; font-size:0.9rem; color:#6b6b6b; font-style:italic;">Md. Abu Jayed is a content writer specialising in business and cricket. He writes at jayedinsight.me</p>`
+  },
+  {
+    id: 'c2',
+    title: 'Sample Cricket Article',
+    date: 'January 2026',
+    excerpt: 'This is a sample article. Replace this with your own cricket writing.',
+    body: `<p>Replace this with your own cricket article content.</p>`
+  }
+];
 
-<p>T20 brought urgency and spectacle to the sport. Test cricket absorbed those lessons, sharpened itself against them, and emerged not diminished but clarified. It knows what it is now more clearly than it did in 2008: the format where the game is played at its most complete, where skill and character are tested across time, and where the sport's deepest stories are still written.</p>
-
-<p>Other formats entertain. Test cricket endures.</p>
-
-<p>And in enduring, it remains — still, stubbornly, magnificently — supreme.</p>
-
-<p style="margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid #d6cebf; font-size:0.9rem; color:#6b6b6b; font-style:italic;">Md. Abu Jayed is a content writer specialising in business and cricket. He writes at jayedinsight.me</p>
-  `
-},
-
-// ── PAGE NAVIGATION ──
 let articleOrigin = 'business';
 
 function showPage(name) {
@@ -448,17 +565,12 @@ function gotoContact() {
   setTimeout(() => document.getElementById('contact-anchor').scrollIntoView({ behavior: 'smooth' }), 80);
 }
 
-// ── RENDER CARDS ──
 function renderGrid(type, articles) {
   const isBiz = type === 'biz';
   document.getElementById(type + '-count').textContent = articles.length + ' article' + (articles.length !== 1 ? 's' : '');
   const grid = document.getElementById(type + '-grid');
   if (!articles.length) {
-    grid.innerHTML = `<div class="empty-state">
-      <div class="empty-icon">${isBiz ? '📝' : '🏏'}</div>
-      <h3>No articles yet</h3>
-      <p>Add your articles to the <code>${isBiz ? 'businessArticles' : 'cricketArticles'}</code> array in the HTML file — they will appear here automatically.</p>
-    </div>`;
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">${isBiz ? '📝' : '🏏'}</div><h3>No articles yet</h3><p>Add your articles to the <code>${isBiz ? 'businessArticles' : 'cricketArticles'}</code> array in the HTML file.</p></div>`;
     return;
   }
   grid.innerHTML = articles.map(a => `
@@ -473,7 +585,6 @@ function renderGrid(type, articles) {
     </div>`).join('');
 }
 
-// ── OPEN ARTICLE ──
 function openArticle(id, type) {
   const isBiz = type === 'biz';
   const article = (isBiz ? businessArticles : cricketArticles).find(a => a.id === id);
@@ -492,7 +603,6 @@ function openArticle(id, type) {
   showPage('article');
 }
 
-// ── CONTACT ──
 function handleSubmit(e) {
   e.preventDefault();
   document.getElementById('form-ok').style.display = 'block';
@@ -500,285 +610,11 @@ function handleSubmit(e) {
   setTimeout(() => document.getElementById('form-ok').style.display = 'none', 5000);
 }
 
-// ── FADE IN ──
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
 renderGrid('biz', businessArticles);
 renderGrid('cric', cricketArticles);
 </script>
-<!-- ══════════ ABOUT ME PAGE ══════════ -->
-<!-- ADD THIS BLOCK inside the home page div, BEFORE <section class="about-section"> -->
-
-<!-- First add this button to your nav. Find id="nav-cricket" and add this AFTER it: -->
-<!-- <li><button id="nav-about" onclick="showPage('about')">About</button></li> -->
-
-<!-- Also add "About" link inside nav by finding this line:
-     <li><button onclick="gotoContact()">Contact</button></li>
-     and adding BEFORE it:
-     <li><button id="nav-about" onclick="showPage('about')">About</button></li>
--->
-
-<!-- ══ PASTE THIS ENTIRE BLOCK just before </body> tag at the very bottom of your file ══ -->
-
-<style>
-.about-me-header { padding: 100px 5% 50px; background: var(--navy); position: relative; overflow: hidden; }
-.about-me-header::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(184,149,42,0.06) 59px, rgba(184,149,42,0.06) 60px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(184,149,42,0.06) 79px, rgba(184,149,42,0.06) 80px); pointer-events: none; }
-.about-me-header-inner { max-width: 1100px; margin: 0 auto; position: relative; display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; align-items: center; }
-.about-me-photo-wrap { position: relative; }
-.about-me-photo { width: 200px; height: 200px; border-radius: 4px; object-fit: cover; object-position: top; border: 3px solid var(--gold); display: block; }
-.about-me-photo-placeholder { width: 200px; height: 200px; border-radius: 4px; background: var(--navy-light); border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-light); }
-.about-me-badge { position: absolute; bottom: -10px; right: -10px; background: var(--gold); color: var(--navy); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px; font-family: 'Crimson Text', serif; font-weight: 600; }
-.about-me-intro { }
-.about-me-intro .page-eyebrow { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.5rem; font-family: 'Crimson Text', serif; }
-.about-me-intro h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 0.3rem; }
-.about-me-intro .about-title { font-family: 'EB Garamond', serif; font-style: italic; color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1rem; }
-.about-me-intro .bio { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 580px; margin-bottom: 1.5rem; }
-.about-me-contacts { display: flex; gap: 1rem; flex-wrap: wrap; }
-.about-contact-pill { padding: 0.4rem 1rem; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); font-size: 0.82rem; font-family: 'Crimson Text', serif; letter-spacing: 0.05em; text-decoration: none; transition: border-color 0.2s, color 0.2s; border-radius: 2px; }
-.about-contact-pill:hover { border-color: var(--gold); color: var(--gold-light); }
-
-.about-me-body { padding: 60px 5% 90px; background: var(--cream); }
-.about-me-body-inner { max-width: 1100px; margin: 0 auto; }
-.about-me-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-.about-block-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--gold); display: flex; align-items: center; gap: 8px; }
-.about-block-title.green { border-bottom-color: var(--green); }
-
-/* Experience items */
-.exp-item { margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 0.5px solid var(--border); }
-.exp-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
-.exp-role { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
-.exp-date { font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; font-family: 'Crimson Text', serif; }
-.exp-company { font-size: 0.88rem; color: var(--gold); font-family: 'Crimson Text', serif; margin-bottom: 0.4rem; font-style: italic; }
-.exp-bullets { list-style: none; }
-.exp-bullets li { font-size: 0.9rem; color: var(--text-muted); padding: 0.2rem 0; padding-left: 14px; position: relative; line-height: 1.5; }
-.exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.7rem; top: 0.35rem; }
-
-/* Education */
-.edu-item { background: var(--cream-dark); padding: 1.2rem; border-left: 3px solid var(--gold); margin-bottom: 1rem; }
-.edu-degree { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
-.edu-uni { font-size: 0.9rem; color: var(--gold); font-style: italic; margin-bottom: 0.2rem; }
-.edu-meta { font-size: 0.82rem; color: var(--text-muted); }
-
-/* Skills */
-.skills-group { margin-bottom: 1.2rem; }
-.skills-group-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; font-family: 'Crimson Text', serif; }
-.skills-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.skill-pill { padding: 0.3rem 0.8rem; background: var(--cream-dark); border: 1px solid var(--border); font-size: 0.82rem; color: var(--text-mid); font-family: 'Crimson Text', serif; border-radius: 2px; }
-.skill-pill.gold { background: rgba(184,149,42,0.1); border-color: rgba(184,149,42,0.3); color: #7a6015; }
-
-/* Achievements */
-.achievement-list { list-style: none; }
-.achievement-list li { font-size: 0.92rem; color: var(--text-mid); padding: 0.5rem 0; border-bottom: 0.5px solid var(--border); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
-.achievement-list li:last-child { border-bottom: none; }
-.achievement-list li::before { content: '★'; color: var(--gold); font-size: 0.7rem; margin-top: 0.3rem; flex-shrink: 0; }
-
-/* Extracurricular */
-.extra-item { margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 0.5px solid var(--border); }
-.extra-item:last-child { border-bottom: none; }
-.extra-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.2rem; flex-wrap: wrap; }
-.extra-role { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 600; color: var(--navy); }
-.extra-org { font-size: 0.85rem; color: var(--green-light); font-style: italic; margin-bottom: 0.3rem; }
-
-@media (max-width: 800px) {
-  .about-me-header-inner { grid-template-columns: 1fr; text-align: center; }
-  .about-me-photo { margin: 0 auto; }
-  .about-me-photo-placeholder { margin: 0 auto; }
-  .about-me-contacts { justify-content: center; }
-  .about-me-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-me-badge { right: auto; left: 50%; transform: translateX(-50%); }
-}
-</style>
-
-<div class="page" id="page-about">
-  <!-- HEADER -->
-  <div class="about-me-header">
-    <div class="about-me-header-inner">
-      <div class="about-me-photo-wrap">
-        <!-- PHOTO: Upload your photo to GitHub repo as "profile.jpg" then it will show automatically -->
-        <!-- If photo not uploaded yet, a placeholder with initials shows instead -->
-        <img src="profile.jpg" class="about-me-photo" alt="Md. Abu Jayed"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="about-me-photo-placeholder" style="display:none;">AJ</div>
-        <div class="about-me-badge">Content Writer</div>
-      </div>
-      <div class="about-me-intro">
-        <p class="page-eyebrow">About Me</p>
-        <h1>Md. Abu Jayed</h1>
-        <p class="about-title">Business & Cricket Content Writer · Marketing Professional</p>
-        <p class="bio">Business graduate from the University of Dhaka with hands-on experience in sales, marketing, and brand strategy. Passionate about translating complex business ideas and cricket narratives into compelling, reader-first content. Award-winning writer and proven marketing professional with a track record of measurable results.</p>
-        <div class="about-me-contacts">
-          <a href="mailto:abujahedsami@gmail.com" class="about-contact-pill">✉ abujahedsami@gmail.com</a>
-          <a href="tel:+8801885317799" class="about-contact-pill">📞 +880 1885 317799</a>
-          <a href="https://www.linkedin.com/in/abu-jayed-sami-055bb8221/" target="_blank" class="about-contact-pill">LinkedIn →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BODY -->
-  <div class="about-me-body">
-    <div class="about-me-body-inner">
-
-      <!-- ROW 1: Experience + Education -->
-      <div class="about-me-grid">
-
-        <!-- WORK EXPERIENCE -->
-        <div>
-          <div class="about-block-title">Work Experience</div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">Sales Intern</div>
-              <div class="exp-date">Sep 2025 – Nov 2025</div>
-            </div>
-            <div class="exp-company">Brand Craftar</div>
-            <ul class="exp-bullets">
-              <li>Conducted business & market analysis for 2 client companies on branding strategies</li>
-              <li>Developed customised pitch decks, onboarding 5 clients</li>
-              <li>Built a sales pipeline generating 20–40 qualified leads/month at 10–20% close rate</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">Marketing Intern</div>
-              <div class="exp-date">Jun 2025 – Oct 2025</div>
-            </div>
-            <div class="exp-company">Pacific Asia Travel Association (PATA)</div>
-            <ul class="exp-bullets">
-              <li>Communicated with Airbnb & BBC stakeholders regarding PTM 2025</li>
-              <li>Developed monthly promotional campaign including video interviews & reels</li>
-              <li>Planned bi-weekly newsletter content, blog articles, and social media posts</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">Branding & Marketing Executive</div>
-              <div class="exp-date">Mar 2024 – Aug 2024</div>
-            </div>
-            <div class="exp-company">Data Solution 360 (Part-time)</div>
-            <ul class="exp-bullets">
-              <li>Built partnerships with 30+ university organisations through MOU signings</li>
-              <li>Increased organic reach by 400% (8K → 40K followers)</li>
-              <li>Achieved BDT 700k in course sales revenue within the 3rd month</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-top">
-              <div class="exp-role">Deputy Head of Corporate Affairs</div>
-              <div class="exp-date">Aug 2023 – Sep 2023</div>
-            </div>
-            <div class="exp-company">Greenaugurate Event</div>
-            <ul class="exp-bullets">
-              <li>Secured BDT 500,000 through sponsorship proposals to corporate partners</li>
-              <li>Coordinated judges' panels for a national sustainability-focused case competition</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- EDUCATION + SKILLS -->
-        <div>
-          <div class="about-block-title">Education</div>
-          <div class="edu-item">
-            <div class="edu-degree">BBA in Tourism & Hospitality Management</div>
-            <div class="edu-uni">University of Dhaka</div>
-            <div class="edu-meta">CGPA: 3.40 &nbsp;·&nbsp; Feb 2022 – Jan 2026</div>
-          </div>
-
-          <div class="about-block-title" style="margin-top:2rem;">Skills</div>
-          <div class="skills-group">
-            <div class="skills-group-label">Technical</div>
-            <div class="skills-pills">
-              <span class="skill-pill gold">Graphic Design</span>
-              <span class="skill-pill gold">Canva</span>
-              <span class="skill-pill gold">Power BI</span>
-              <span class="skill-pill">MS Excel</span>
-              <span class="skill-pill">PowerPoint</span>
-              <span class="skill-pill">Asana</span>
-              <span class="skill-pill">Google Workspace</span>
-            </div>
-          </div>
-          <div class="skills-group">
-            <div class="skills-group-label">Soft Skills</div>
-            <div class="skills-pills">
-              <span class="skill-pill">Project Management</span>
-              <span class="skill-pill">Lead Management</span>
-              <span class="skill-pill">Market Research</span>
-              <span class="skill-pill">Stakeholder Management</span>
-              <span class="skill-pill">Event Management</span>
-              <span class="skill-pill">Critical Thinking</span>
-            </div>
-          </div>
-          <div class="skills-group">
-            <div class="skills-group-label">Interests</div>
-            <div class="skills-pills">
-              <span class="skill-pill gold">Cricket</span>
-              <span class="skill-pill gold">Branding</span>
-              <span class="skill-pill gold">Marketing</span>
-              <span class="skill-pill">Astronomy</span>
-              <span class="skill-pill">Football</span>
-              <span class="skill-pill">Movies</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ROW 2: Achievements + Extracurricular -->
-      <div class="about-me-grid">
-
-        <div>
-          <div class="about-block-title green">Achievements</div>
-          <ul class="achievement-list">
-            <li>Advent HR 2.0, HR Competition (BUP) — 1st Runner Up</li>
-            <li>Lean Sprint 2.0 (AIPE, BUET) — Finalist</li>
-            <li>ISCEA Prize Global Supply Chain Case Competition — 90% Scholarship Recipient</li>
-            <li>Powerpreneur (DUEDC) — Finalist</li>
-            <li>Youth School for Social Entrepreneurs — "Popular Writer of the Month" (Dec & Feb)</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="about-block-title green">Extracurricular</div>
-
-          <div class="extra-item">
-            <div class="extra-top">
-              <div class="extra-role">Head of Corporate Affairs</div>
-              <div class="exp-date">May 2023 – Present</div>
-            </div>
-            <div class="extra-org">PATA Bangladesh Dhaka University Student Chapter</div>
-            <ul class="exp-bullets">
-              <li>Organised Career Familiarization Sessions with industry professionals</li>
-              <li>Planned World Tourism Day 2024 panel discussion on sustainability</li>
-              <li>Led recruitment process for new batch of members</li>
-            </ul>
-          </div>
-
-          <div class="extra-item">
-            <div class="extra-top">
-              <div class="extra-role">Deputy Head of Corporate Affairs</div>
-              <div class="exp-date">Aug 2023 – Sep 2023</div>
-            </div>
-            <div class="extra-org">Greenaugurate Event</div>
-            <ul class="exp-bullets">
-              <li>Pitched sponsorships securing BDT 500,000 from corporate partners</li>
-              <li>Managed end-to-end logistics for national sustainability case competition</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-brand">Jayed Insights</div>
-    <div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div>
-  </footer>
-</div>
-<!-- ══ END OF ABOUT ME SECTION ══ -->
 </body>
 </html>
