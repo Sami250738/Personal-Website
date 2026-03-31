@@ -688,16 +688,14 @@ function handleSubmit(e) {
 const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-renderGrid('biz', businessArticles);
-renderGrid('cric', cricketArticles);
- function shareLinkedIn() {
+function shareLinkedIn() {
   const url = window.location.href;
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
 }
 
 function shareFacebook() {
   const url = window.location.href;
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
 }
 
 function copyLink() {
@@ -711,8 +709,14 @@ function loadFromHash() {
     const parts = hash.replace('article/', '').split('/');
     const type = parts[0];
     const id = parts[1];
+   const validTypes = ['biz', 'cric'];
 
-    openArticle(id, type, true);
+    if (id && validTypes.includes(type)) {
+      openArticle(id, type, true);
+      return;
+    }
+
+    showPage('home', { updateHash: false });
     return;
   }
  const page = hash || 'home';
