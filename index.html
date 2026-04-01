@@ -488,16 +488,82 @@
 const businessArticles = [
   {
     id: 'b1',
-    title: 'Why Every Business Needs a Clear Content Strategy in 2026',
-    date: 'March 2026',
-    excerpt: 'In an era of information overload, businesses that communicate with clarity and intention cut through the noise. Here\'s why a content strategy is no longer optional.',
-    body: `<p>In an era of information overload, businesses that communicate with clarity and intention cut through the noise. A content strategy is no longer a luxury — it is the backbone of sustainable brand growth.</p>
-<h2>What is a content strategy?</h2>
-<p>A content strategy defines what you say, how you say it, who you say it to, and why. It aligns your messaging with your business goals and your audience's needs.</p>
-<p>Without it, content becomes scattered — blog posts that don't rank, social posts that don't convert, and newsletters nobody opens.</p>
-<h2>The ROI of strategic content</h2>
-<p>Businesses with documented content strategies are significantly more likely to report success in their marketing efforts. The reason is simple: intentional content builds trust, and trust drives conversions.</p>
-<p><em>Replace this with your own writing.</em></p>`
+       title: 'From Tiger Stripes to a Heartbeat',
+    date: 'December 2025',
+    image: 'hero.banglalink.png',
+    excerpt: 'The story, strategy, and unanswered questions behind Banglalink\'s first rebrand in twenty years.',
+    body: `<style>
+      .bl-article { --bl-ink:#1a1208; --bl-ink-light:#4a3f30; --bl-warm-mid:#f0ebe0; --bl-orange:#e85d04; --bl-orange-light:#f4a261; --bl-rule:#d4c9b8; }
+      .bl-hero { position:relative; width:100%; height:70vh; min-height:440px; overflow:hidden; display:flex; align-items:flex-end; margin:0 0 2.5rem; border-radius:4px; }
+      .bl-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:brightness(0.55) saturate(1.1); }
+      .bl-hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(20,12,4,0.92) 0%, rgba(20,12,4,0.3) 55%, transparent 100%); }
+      .bl-hero-content { position:relative; z-index:2; padding:0 clamp(1rem, 5vw, 3rem) clamp(1.8rem, 4vw, 3rem); max-width:760px; }
+      .bl-hero-kicker { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--bl-orange-light); margin-bottom:1rem; border-left:2px solid var(--bl-orange); padding-left:0.75rem; }
+      .bl-hero h2 { font-family:'Playfair Display', serif; font-size:clamp(2rem, 5vw, 3.4rem); font-weight:700; color:#fff; line-height:1.12; margin-bottom:0.8rem; letter-spacing:-0.01em; }
+      .bl-hero-sub { font-style:italic; font-size:clamp(0.95rem, 1.8vw, 1.12rem); color:rgba(255,255,255,0.78); max-width:560px; line-height:1.65; }
+      .bl-meta { margin-top:1.5rem; font-size:0.82rem; color:rgba(255,255,255,0.55); letter-spacing:0.04em; display:flex; flex-wrap:wrap; align-items:center; gap:1rem; }
+      .bl-drop-cap::first-letter { font-family:'Playfair Display', serif; font-size:4.4rem; font-weight:700; float:left; line-height:0.82; padding-right:0.14em; padding-top:0.12em; color:var(--bl-orange); }
+      .bl-section-head { margin:3.1rem 0 1rem; display:flex; align-items:baseline; gap:0.9rem; }
+      .bl-section-head h2 { margin:0; font-family:'Playfair Display', serif; font-size:clamp(1.2rem, 2.5vw, 1.6rem); font-weight:600; color:var(--navy); line-height:1.25; }
+      .bl-section-head::before { content:''; display:block; width:24px; height:2px; background:var(--bl-orange); flex-shrink:0; position:relative; top:-2px; }
+      .bl-pull-quote { margin:2.4rem 0; padding:1.6rem 1.8rem; border-left:4px solid var(--bl-orange); background:var(--bl-warm-mid); font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(1.05rem, 2vw, 1.25rem); line-height:1.55; color:var(--bl-ink); }
+      .bl-pull-quote cite { display:block; margin-top:0.9rem; font-style:normal; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--bl-ink-light); }
+      .bl-article-img { margin:2.4rem 0; overflow:hidden; }
+      .bl-article-img img { width:100%; display:block; height:420px; object-fit:cover; object-position:center; border-radius:2px; }
+      .bl-article-img figcaption { padding:0.65rem 0 0; font-size:0.8rem; color:#6b6b6b; letter-spacing:0.02em; border-top:1px solid var(--bl-rule); margin-top:0.6rem; }
+      .bl-stat-band { display:grid; grid-template-columns:repeat(3, 1fr); margin:2.5rem 0; border:1px solid var(--bl-rule); }
+      .bl-stat-item { padding:1.3rem 1rem; text-align:center; border-right:1px solid var(--bl-rule); }
+      .bl-stat-item:last-child { border-right:none; }
+      .bl-stat-num { font-family:'Playfair Display', serif; font-size:2rem; font-weight:700; color:var(--bl-orange); display:block; line-height:1; margin-bottom:0.35rem; }
+      .bl-stat-label { font-size:0.74rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--bl-ink-light); }
+      .bl-footer-note { margin-top:2.8rem; padding-top:1.3rem; border-top:1px solid var(--bl-rule); font-size:0.86rem; color:#6b6b6b; font-style:italic; }
+      .bl-bn { font-style:italic; color:var(--bl-orange); font-weight:600; }
+      @media (max-width:620px){ .bl-stat-band{grid-template-columns:1fr;} .bl-stat-item{border-right:none; border-bottom:1px solid var(--bl-rule);} .bl-stat-item:last-child{border-bottom:none;} .bl-article-img img{height:260px;} .bl-pull-quote{padding:1.2rem;} }
+    </style>
+    <article class="bl-article">
+      <header class="bl-hero">
+        <img src="hero.banglalink.png" alt="Banglalink rebranding hero image" />
+        <div class="bl-hero-overlay"></div>
+        <div class="bl-hero-content">
+          <span class="bl-hero-kicker">Branding &amp; Strategy · December 2025</span>
+          <h2>From Tiger Stripes<br>to a Heartbeat</h2>
+          <p class="bl-hero-sub">The story, the strategy, and the unanswered questions behind Banglalink's first rebrand in twenty years.</p>
+          <div class="bl-meta"><span>● Deep Analysis</span><span>● 8 min read</span></div>
+        </div>
+      </header>
+
+      <p class="bl-drop-cap">On December 1, 2025, Banglalink quietly did something it had not done in almost twenty years. The famous orange square with its striking tiger stripes, a staple of Bangladeshi culture since 2005, was formally retired. A softer, heart-shaped "B" symbol with a warm orange-yellow gradient and a new motto, <em>"Aponar Jonno"</em> — For You — replaced it. The internet, of course, had thoughts.</p>
+      <p>But beyond the memes and the nostalgia-fuelled debates, this rebranding reveals a much more nuanced story. It is the story of a corporation navigating structural changes, competitive pressure, and the changing demands of a country fast rushing into the digital age.</p>
+
+      <div class="bl-stat-band">
+        <div class="bl-stat-item"><span class="bl-stat-num">185M+</span><span class="bl-stat-label">Mobile Subscribers (Jan 2026)</span></div>
+        <div class="bl-stat-item"><span class="bl-stat-num">20%</span><span class="bl-stat-label">Banglalink Market Share</span></div>
+        <div class="bl-stat-item"><span class="bl-stat-num">38M</span><span class="bl-stat-label">Banglalink Subscribers</span></div>
+      </div>
+
+      <div class="bl-section-head"><h2>Twenty Years of Orange: What the Tiger Stripes Meant</h2></div>
+      <p>To understand why the rebranding stirred such intense feelings, you must first understand what the previous identity stood for. Bangladesh was a different nation when Banglalink made its commercial debut in 2005. Owning a mobile device was closer to a luxury than a necessity.</p>
+      <p>The brand's advertising language of that era was intimate and distinctly local. <span class="bl-bn">"শুনতে কী পাও?" "কথা দিলাম"</span> — taglines that spoke of connection, reliability, and a very human kind of promise.</p>
+
+      <figure class="bl-article-img">
+        <img src="2ndpic.banglalink.png" alt="Banglalink old vs new brand identity" />
+        <figcaption>The evolution of Banglalink's identity: from the tiger-stripe orange square to the new heart-shaped "B" mark.</figcaption>
+      </figure>
+
+      <div class="bl-section-head"><h2>What the New Identity Is Actually Saying</h2></div>
+      <p>The new visual system is not arbitrary. The heart-shaped "B" mark, the warmer gradient palette, and the rounder digital-friendly typography are deliberate signals about where the company wants to go.</p>
+
+      <div class="bl-pull-quote">"This brand refresh is far more than a new look. It is a bold reaffirmation of our commitment to enriching every minute of our customers' lives."<cite>Johan Buse, CEO — Banglalink</cite></div>
+
+      <figure class="bl-article-img">
+        <img src="3rdpic.banglalink.png" alt="Banglalink digital ecosystem - Toffee, BL Play" />
+        <figcaption>Banglalink's expanding digital ecosystem: Toffee, Banglalink Play, and lifestyle services beyond traditional telecom.</figcaption>
+      </figure>
+
+      <div class="bl-section-head"><h2>What Comes Next</h2></div>
+      <p>The Banglalink rebrand is best understood not as an event, but as the opening statement of a longer commitment. The real story will be told over the next two to three years — in product quality, customer service, and consistency across every touchpoint.</p>
+      <p class="bl-footer-note">The author writes on business strategy, branding, and the digital economy in Bangladesh.</p>
+    </article>`
   },
   {
     id: 'b2',
