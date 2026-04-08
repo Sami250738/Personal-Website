@@ -605,12 +605,141 @@ const businessArticles = [
   },
   {
     id: 'b2',
-    title: '2nd Article',
-    date: 'February 2026',
-    excerpt: 'Thought leadership is not about showing off what you know — it\'s about generously sharing insight that helps your audience make better decisions.',
-    body: `<p>Thought leadership is not about showing off what you know. It's about generously sharing insight that helps your audience make better decisions — and in doing so, positioning yourself as the go-to voice in your field.</p>
-<p><em>Replace this with your own writing.</em></p>`
+     title: 'The Petrodollar System: The Invisible Deal That Controls the World Economy',
+    date: 'April 2026',
+    image: 'heroB2.png',
+    excerpt: 'The invisible oil-dollar deal that shaped global trade, U.S. debt markets, sanctions power, and the slow rise of de-dollarization.',
+    body: `<style>
+      .pd-article { --pd-rule:#d9d1c3; --pd-accent:#2f5d8a; --pd-accent-soft:#8eb6dc; --pd-band:#e9eff5; }
+      .pd-hero { position:relative; min-height:430px; display:flex; align-items:flex-end; margin:0 0 2.4rem; border-radius:4px; overflow:hidden; background:linear-gradient(135deg,#14273f 0%,#223e63 58%,#355b8f 100%); }
+      .pd-hero::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 42px,rgba(255,255,255,0.07) 42px,rgba(255,255,255,0.07) 43px),repeating-linear-gradient(90deg,transparent,transparent 64px,rgba(255,255,255,0.07) 64px,rgba(255,255,255,0.07) 65px); }
+      .pd-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; filter:brightness(0.52) saturate(1.05); }
+      .pd-hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(6,16,29,0.9) 0%,rgba(6,16,29,0.3) 58%,transparent 100%); }
+      .pd-hero-content { position:relative; z-index:2; padding:0 clamp(1rem,5vw,3rem) clamp(1.6rem,4vw,2.9rem); max-width:780px; }
+      .pd-kicker { display:inline-block; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--pd-accent-soft); margin-bottom:1rem; border-left:2px solid var(--pd-accent-soft); padding-left:0.75rem; }
+      .pd-hero h2 { font-family:'Playfair Display', serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:700; color:#fff; line-height:1.12; margin-bottom:0.8rem; }
+      .pd-sub { font-style:italic; font-size:clamp(0.95rem,1.8vw,1.08rem); color:rgba(255,255,255,0.8); line-height:1.65; max-width:640px; }
+      .pd-meta { margin-top:1.3rem; font-size:0.82rem; color:rgba(255,255,255,0.6); letter-spacing:0.04em; display:flex; flex-wrap:wrap; gap:0.9rem; }
+      .pd-dropcap::first-letter { font-family:'Playfair Display', serif; font-size:4.1rem; font-weight:700; float:left; line-height:0.82; padding-right:0.14em; padding-top:0.12em; color:var(--pd-accent); }
+      .pd-section-head { margin:3rem 0 1rem; display:flex; align-items:baseline; gap:0.85rem; }
+      .pd-section-head::before { content:''; width:24px; height:2px; background:var(--pd-accent); flex-shrink:0; position:relative; top:-2px; }
+      .pd-section-head h2 { margin:0; font-family:'Playfair Display', serif; font-size:clamp(1.18rem,2.4vw,1.55rem); color:var(--navy); line-height:1.28; }
+      .pd-quote { margin:2.3rem 0; padding:1.55rem 1.75rem; border-left:4px solid var(--pd-accent); background:var(--pd-band); font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(1.02rem,2vw,1.2rem); line-height:1.55; color:#13253b; }
+      .pd-article-img { margin:2.2rem 0; overflow:hidden; }
+      .pd-article-img img { width:100%; display:block; height:290px; object-fit:cover; object-position:center; border-radius:2px; }
+      .pd-article-img figcaption { padding:0.65rem 0 0; font-size:0.8rem; color:#6b6b6b; letter-spacing:0.02em; border-top:1px solid var(--pd-rule); margin-top:0.6rem; }
+      .pd-stat-band { display:grid; grid-template-columns:repeat(3,1fr); margin:2.5rem 0; border:1px solid var(--pd-rule); background:#fff; }
+      .pd-stat-item { padding:1.25rem 1rem; text-align:center; border-right:1px solid var(--pd-rule); }
+      .pd-stat-item:last-child { border-right:none; }
+      .pd-stat-num { display:block; font-family:'Playfair Display', serif; font-size:1.95rem; font-weight:700; color:var(--pd-accent); line-height:1; margin-bottom:0.38rem; }
+      .pd-stat-label { font-size:0.73rem; letter-spacing:0.08em; text-transform:uppercase; color:#49607a; }
+      .pd-footer-note { margin-top:2.8rem; padding-top:1.25rem; border-top:1px solid var(--pd-rule); font-size:0.86rem; color:#6b6b6b; font-style:italic; }
+      @media (max-width:620px){ .pd-stat-band{grid-template-columns:1fr;} .pd-stat-item{border-right:none; border-bottom:1px solid var(--pd-rule);} .pd-stat-item:last-child{border-bottom:none;} .pd-quote{padding:1.2rem;} .pd-article-img img{height:220px;} }
+    </style>
+    <article class="pd-article">
+      <header class="pd-hero">
+        <img src="heroB2.png" alt="The petrodollar system global trade concept hero image" />
+        <div class="pd-hero-overlay"></div>
+        <div class="pd-hero-content">
+          <span class="pd-kicker">Global Macro · April 2026</span>
+          <h2>The Petrodollar System:<br>The Invisible Deal That Controls the World Economy</h2>
+          <p class="pd-sub">The hidden foundation under global markets, sanctions, and the long-term structure of your portfolio.</p>
+          <div class="pd-meta"><span>● Macro Strategy</span><span>● Long-form</span></div>
+        </div>
+      </header>
+
+      <p class="pd-dropcap">Did you know there is an invisible system that controls nearly every trade on the planet? Not supply and demand. Not the Federal Reserve. Not even the stock market. There is a secret deal made behind closed doors that forces almost every country on Earth to use US dollars whether they want to or not. A deal that keeps inflation lower than it should be, that lets the US government borrow trillions at rates no other country could dream of, and that gives America the power to destroy entire economies with a phone call. It's called the petrodollar system.</p>
+      <p>And if you're an investor, understanding this system isn't optional. It's the foundation underneath everything else you own. Your stocks, your bonds, your house, your retirement, all of it sits on top of this one agreement. Funny thing is, almost nobody talks about it.</p>
+
+      <div class="pd-section-head"><h2>Oil Is Everything</h2></div>
+      <p>To really understand the petrodollar, you first need to understand something that often goes unsaid. Oil isn't just gasoline. Oil is everything.</p>
+      <p>The plastic in your phone is oil. The fertilizer growing your food, that's oil too, which is a bit worrying. The cargo ship that brings cheap furniture and garments from overseas, oil. The jet fuel flying executives to meetings, also oil. Every single day, the world burns through about 93 million barrels of the stuff.</p>
+      <p>Our modern economy depends on oil for basically everything. Because oil is so important, countries are constantly buying and selling it. Some countries produce a lot of oil like Saudi Arabia. Others use a lot but don't produce much like Japan. This creates a massive global oil market.</p>
+      <p>So here's the question that changes everything: how did the US dollar come to control this global market?</p>
+
+      <div class="pd-section-head"><h2>Bretton Woods: How the Dollar Became King</h2></div>
+      <p>To understand it, we need to go back to the end of World War II. Picture Europe bombed out, devastated. The old powers, Britain, France, Germany, they're in ruins. Economically, physically, a whole generation is basically dead. But America? America's factories are humming. American soil was never touched by bombs. America had become the world's manufacturer, the world's creditor, and the world's gold vault all at once.</p>
+      <p>So in 1944, 44 countries gathered at a resort in Bretton Woods, New Hampshire. Their mission was to create a new global financial system from scratch. This is not a conspiracy theory. This is just history.</p>
+      <p>And the deal they made was this. The US dollar becomes the world's reserve currency. Other currencies pegged to the US dollar, which means their exchange rate is fixed. And the dollar is convertible to gold at a fixed price of $35 per ounce. Basically, the dollar was gold. You could walk up to a US bank and exchange your dollars for actual gold bars at a fixed rate.</p>
+      <p>This worked for about 25 years. But then the 1960s happened. Vietnam War. Great Society programs. Spending exploded. And countries started noticing something rather uncomfortable. The US was printing way more dollars than it had gold to back them. France under de Gaulle actually started demanding gold in exchange for their dollars because they saw what was happening.</p>
+
+      <div class="pd-section-head"><h2>Nixon's Shock and the Fiat Problem</h2></div>
+      <p>So President Nixon literally went on television and said: "Yeah, we're not doing that anymore. No more gold for dollars." Just like that, the gold standard was dead.</p>
+      <p>The dollar was now what we call fiat currency, basically money backed by nothing except a government saying it's worth something. Which is sort of not super reassuring, right? And for a couple of years it was just chaos. The dollar dropped. Other currencies became super volatile. Nobody really knew what any of it meant.</p>
+      <figure class="pd-article-img">
+        <img src="B2.png" alt="Nixon shock and fiat era transition illustration" />
+        <figcaption>Nixon's 1971 break from gold reset the global monetary order and set the stage for the petrodollar era.</figcaption>
+      </figure>
+
+      <div class="pd-section-head"><h2>1973: The Crisis That Created the Petrodollar</h2></div>
+      <p>Then in 1973, war broke out in the Middle East. The Yom Kippur War. Israel versus Egypt and Syria. The US backed Israel with weapons, so Arab countries were angry and they had one very powerful card to play.</p>
+      <p>OPEC, the cartel of oil producing countries, announced an embargo. No oil for America or anybody supporting Israel. Oil prices went up 4x overnight. Gas lines stretched for blocks. The American economy went into an absolute tailspin. It was a real crisis.</p>
+      <p>So Nixon sent Henry Kissinger, the Secretary of State, to Saudi Arabia with a very specific proposal. And the deal was very simple. Saudi Arabia agrees to sell oil only in US dollars. The United States agrees to provide military protection and weapons.</p>
+      <p>In other words: you make sure everyone needs dollars to buy your oil. We make sure nobody messes with you. Ever.</p>
+      <p>Since Saudi Arabia was the largest of the oil producing countries, the other ones soon had to follow suit. And just like that, for everybody else in the world, you just became a forced customer of the US dollar forever.</p>
+
+      <div class="pd-stat-band">
+        <div class="pd-stat-item"><span class="pd-stat-num">93M</span><span class="pd-stat-label">Barrels Burned Daily</span></div>
+        <div class="pd-stat-item"><span class="pd-stat-num">$35</span><span class="pd-stat-label">Bretton Woods Gold Peg</span></div>
+        <div class="pd-stat-item"><span class="pd-stat-num">58%</span><span class="pd-stat-label">Current Reserve Share (Approx.)</span></div>
+      </div>
+
+      <div class="pd-section-head"><h2>The Loop: How Petrodollar Recycling Works</h2></div>
+      <p>Once you see how this system operates, you can't unsee it.</p>
+      <p>Let's go back to Japan. They need oil, millions of barrels every single month. But they can't buy it in yen. The deal says dollars only. So Japan needs to earn dollars first, by selling cars, electronics, semiconductors to the US. And then they send those dollars to Saudi Arabia to pay for oil.</p>
+      <p>But Japan doesn't just need dollars today. They need dollars all the time. Oil is a constant need, you burn fuel every day. So what do they do? They keep a massive pile of US dollars in reserve. And the safest way to hold dollars isn't holding cash. So they buy US government bonds with them, also known as US treasuries.</p>
+      <p>Now Japan and every other oil importing country is buying and holding dollar debt. Lots of it.</p>
+      <p>And here's where it gets even better for the US. Saudi Arabia and the other Gulf states, they're getting more and more dollars than they can spend in their own countries. There are only so many gold-plated Lamborghinis you can buy. So what do they do? They invest it. Where? Right back into the USA. They buy US debt because it's safe. They buy US stocks. They buy US real estate. And of course, US weapons.</p>
+      <p>This is called petrodollar recycling. The money flows out to buy oil and then flows right back in as investment. It's a perfect loop. And it was designed that way to keep the United States on top.</p>
+
+      <div class="pd-section-head"><h2>3 Massive Advantages This Gives America</h2></div>
+      <p>The petrodollar system gives America three massive advantages that most investors have never thought about.</p>
+      <p>First, every country that imports oil, which is basically everybody, must hold dollars. Not because they love America, not because they think the dollar is pretty, but because they literally cannot buy energy without it. This creates a constant structural demand, a permanent demand for dollars that has nothing to do with the US economy. It means the dollar stays stronger than it should. It means if you're American, your purchasing power, especially for imports, is artificially boosted.</p>
+      <p>Second, all those countries need to hold dollars, and the safest way to hold dollars is buying US government bonds. So there is this massive permanent demand for US debt. And what happens when everyone wants to buy your debt? You get to pay very low interest rates. The US government can borrow at rates that would make other countries jealous. That means more government spending, lower taxes than otherwise necessary, bigger deficits without real immediate consequences. And for investors, it means US bond rates stay lower, which pushes more money into stocks, into real estate, into riskier assets. The whole "stocks only go up" environment of the last few decades? The petrodollar is the invisible force that's been making that possible.</p>
+      <p>Third, and this is the most powerful one. If you control the currency that everybody must use, you can cut anyone off from the global economy. And this is why US sanctions are so devastating while other countries' sanctions barely matter. When the US sanctioned Russia in 2022, they didn't invade it. They didn't bomb it. They just said: "You can't use dollars anymore." And suddenly all Russian banks couldn't trade. Russian companies couldn't pay suppliers. The US has the power to economically destroy a country without firing a single shot.</p>
+      <figure class="pd-article-img">
+        <img src="B.3png" alt="US dollar power and sanctions influence visual" />
+        <figcaption>Control over settlement currency translates into borrowing advantages, asset demand, and powerful sanctions leverage.</figcaption>
+      </figure>
+
+      <div class="pd-quote">If you control the currency that everybody must use, you can cut anyone off from the global economy.</div>
+
+      <div class="pd-section-head"><h2>De-dollarization: Countries Are Building a Backup Plan</h2></div>
+      <p>Other countries have noticed. It took them a while, but they've noticed.</p>
+      <p>China, Russia, India, Brazil, Saudi Arabia, Iran. They've all watched America weaponize the dollar and thought maybe they should have a backup plan. And for the first time in 50 years, they're actually doing something about it.</p>
+      <p>China and Russia are trading oil in renminbi, the Chinese currency. India is paying for Russian oil in rupees. Saudi Arabia, America's original partner in this deal, is openly discussing selling oil in other currencies. Russia has increased oil trade with China settled in yuan and reduced its US Treasury holdings. China now promotes yuan-denominated oil contracts and encourages trade settlements in yuan with its partners.</p>
+      <p>But here's the key thing to understand. They're reducing dollar use where it's politically necessary, especially under sanctions, while still using it when it's convenient and efficient. It's a gradual shift, not a revolution.</p>
+      <p>Moving away from the petrodollar isn't as simple as it sounds either. If you suddenly switch currencies, you're not just changing payments, you're disrupting contracts, hedging systems, insurance, and pricing models. The US dollar offers high liquidity, meaning you can move billions without crashing the market. It's like when Facebook tried to introduce Threads to compete with Twitter. It's not so easy to get everyone to move platform when everything's already happening somewhere else.</p>
+
+      <div class="pd-section-head"><h2>Why the Dollar Isn't Collapsing Tomorrow</h2></div>
+      <p>So many countries want out. Why hasn't the dollar collapsed yet?</p>
+      <p>The first reason is momentum. The global financial system is like an oil tanker. It doesn't turn on a dime. Trillions of dollars in contracts are written in US dollars. Pricing systems, banking infrastructure, accounting standards, all of it is built around the dollar. Switching is complicated, expensive, and risky. It's like trying to change your phone's operating system. Even if you hate it, the hassle keeps you stuck.</p>
+      <p>The second reason is there is no real alternative yet. The Chinese currency has capital controls, you can't freely move money in and out. The euro? Europe can't even agree on fiscal policy. Bitcoin? Not quite there yet.</p>
+      <p>The third reason is the dollar isn't backed just by economic might. It's backed by 11 aircraft carriers and 750 military bases around the world. Countries think twice before challenging a system when there are consequences.</p>
+
+      <div class="pd-section-head"><h2>The Newspaper Moment</h2></div>
+      <p>Here's the honest take. Big systems don't collapse overnight. They erode very gradually and then suddenly. The petrodollar probably won't end with a headline. It'll just matter less, year by year, trade by trade.</p>
+      <p>The dollar's share of global reserves has already declined from about 70% to 58%. Which is not a crisis, but it is a significant trend.</p>
+      <p>A good analogy: do you remember when everybody said physical newspapers would die because of the internet around 1999? They didn't die immediately. They declined for years. And eventually most of them are gone or barely surviving. The petrodollar is essentially going through its newspaper moment.</p>
+      <p>The smart money isn't betting on a sudden collapse, but it is repositioning for a gradual decline.</p>
+
+      <div class="pd-section-head"><h2>What This Means for Your Money</h2></div>
+      <p>There are three risks worth watching.</p>
+      <p>First, a long-term dollar weakening. If demand for dollars gradually decreases, the dollar will weaken. That means imports get more expensive and US purchasing power will erode.</p>
+      <p>Second, if foreign countries buy less US debt, the US will have to pay higher interest rates to attract buyers. Mortgages get more expensive. Corporate borrowing costs rise. Stock valuations decline. This is the hidden tax that nobody really talks about.</p>
+      <p>Third, if countries can trade without dollars, American sanctions lose a lot of their power. That changes the geopolitical equation and creates uncertainty, which is something markets hate.</p>
+      <p>But there are also opportunities on the other side of this.</p>
+      <p>If the dollar weakens, things that are not dollars go up. Gold, commodities, real assets. If the US loses its unique privilege, other markets become more attractive. Emerging markets, commodity exporters, countries that benefit from a weaker dollar.</p>
+      <p>And perhaps the most contrarian opportunity of all: if countries are trying to use less dollars because they don't want to depend on the US, what's the long-term play? Less dependence on oil. The energy transition isn't just about climate. It's about breaking free from the petrodollar system. Countries that can generate their own energy don't need to buy dollars. That means companies building renewable infrastructure, battery storage, nuclear plants, LNG facilities, they are potentially a very good opportunity.</p>
+
+      <div class="pd-section-head"><h2>The Bottom Line</h2></div>
+      <p>Don't panic. Don't sell everything. Don't put everything into gold bars. But do understand that the invisible foundation underneath your portfolio has cracks forming. Cracks that could widen over the next decade.</p>
+      <p>The petrodollar system has shaped everything in global markets for over 50 years. Your stocks, your bonds, your house, your retirement, all of it sits on top of this one agreement. Understanding it doesn't make you a conspiracy theorist. It makes you an informed investor.</p>
+      <p>And informed investors are the ones who see what's coming before the headlines do.</p>
+      <p class="pd-footer-note">The author writes on business strategy, macro trends, and the long arc of global capital flows.</p>
+    </article>`
   }
+ 
 ];
 
 const cricketArticles = [
