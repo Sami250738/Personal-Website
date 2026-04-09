@@ -627,6 +627,7 @@ const businessArticles = [
       .pd-quote { margin:2.3rem 0; padding:1.55rem 1.75rem; border-left:4px solid var(--pd-accent); background:var(--pd-band); font-family:'Playfair Display', serif; font-style:italic; font-size:clamp(1.02rem,2vw,1.2rem); line-height:1.55; color:#13253b; }
       .pd-article-img { margin:2.2rem 0; overflow:hidden; }
       .pd-article-img img { width:100%; display:block; height:290px; object-fit:cover; object-position:center; border-radius:2px; }
+      .pd-article-img img.pd-full-image { height:auto; max-height:240px; object-fit:contain; margin:0 auto; }
       .pd-article-img figcaption { padding:0.65rem 0 0; font-size:0.8rem; color:#6b6b6b; letter-spacing:0.02em; border-top:1px solid var(--pd-rule); margin-top:0.6rem; }
       .pd-stat-band { display:grid; grid-template-columns:repeat(3,1fr); margin:2.5rem 0; border:1px solid var(--pd-rule); background:#fff; }
       .pd-stat-item { padding:1.25rem 1rem; text-align:center; border-right:1px solid var(--pd-rule); }
@@ -634,7 +635,7 @@ const businessArticles = [
       .pd-stat-num { display:block; font-family:'Playfair Display', serif; font-size:1.95rem; font-weight:700; color:var(--pd-accent); line-height:1; margin-bottom:0.38rem; }
       .pd-stat-label { font-size:0.73rem; letter-spacing:0.08em; text-transform:uppercase; color:#49607a; }
       .pd-footer-note { margin-top:2.8rem; padding-top:1.25rem; border-top:1px solid var(--pd-rule); font-size:0.86rem; color:#6b6b6b; font-style:italic; }
-      @media (max-width:620px){ .pd-stat-band{grid-template-columns:1fr;} .pd-stat-item{border-right:none; border-bottom:1px solid var(--pd-rule);} .pd-stat-item:last-child{border-bottom:none;} .pd-quote{padding:1.2rem;} .pd-article-img img{height:220px;} }
+      @media (max-width:620px){ .pd-stat-band{grid-template-columns:1fr;} .pd-stat-item{border-right:none; border-bottom:1px solid var(--pd-rule);} .pd-stat-item:last-child{border-bottom:none;} .pd-quote{padding:1.2rem;} .pd-article-img img{height:220px;} .pd-article-img img.pd-full-image{height:auto; max-height:170px;} }
     </style>
     <article class="pd-article">
       <header class="pd-hero">
@@ -698,7 +699,7 @@ const businessArticles = [
       <p>Second, all those countries need to hold dollars, and the safest way to hold dollars is buying US government bonds. So there is this massive permanent demand for US debt. And what happens when everyone wants to buy your debt? You get to pay very low interest rates. The US government can borrow at rates that would make other countries jealous. That means more government spending, lower taxes than otherwise necessary, bigger deficits without real immediate consequences. And for investors, it means US bond rates stay lower, which pushes more money into stocks, into real estate, into riskier assets. The whole "stocks only go up" environment of the last few decades? The petrodollar is the invisible force that's been making that possible.</p>
       <p>Third, and this is the most powerful one. If you control the currency that everybody must use, you can cut anyone off from the global economy. And this is why US sanctions are so devastating while other countries' sanctions barely matter. When the US sanctioned Russia in 2022, they didn't invade it. They didn't bomb it. They just said: "You can't use dollars anymore." And suddenly all Russian banks couldn't trade. Russian companies couldn't pay suppliers. The US has the power to economically destroy a country without firing a single shot.</p>
       <figure class="pd-article-img">
-        <img src="B.3png" alt="US dollar power and sanctions influence visual" />
+       <img class="pd-full-image" src="B.3png" alt="US dollar power and sanctions influence visual" />
         <figcaption>Control over settlement currency translates into borrowing advantages, asset demand, and powerful sanctions leverage.</figcaption>
       </figure>
 
