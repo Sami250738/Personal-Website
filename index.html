@@ -302,8 +302,8 @@
           <button class="dynamic-action biz" onclick="showPage('business')">Go to Business Articles →</button>
           <button class="dynamic-action cric" onclick="showPage('cricket')">Go to Cricket Articles →</button>
           <div class="dynamic-stats">
-            <div><strong id="dynamic-biz-count">0</strong>Business posts</div>
-            <div><strong id="dynamic-cric-count">0</strong>Cricket posts</div>
+            <div><strong id="dynamic-biz-count">0</strong> Business posts</div>
+            <div><strong id="dynamic-cric-count">0</strong> Cricket posts</div>
           </div>
         </aside>
       </div>
@@ -923,12 +923,12 @@ function initHomeDynamic() {
 
   const highlights = [];
   if (businessArticles.length) {
-    const latestBusiness = businessArticles[businessArticles.length - 1];
-    highlights.push({ type: 'biz', title: latestBusiness.title, excerpt: latestBusiness.excerpt, page: 'business' });
+    const lastBusinessArticle = businessArticles[businessArticles.length - 1];
+    highlights.push({ type: 'biz', title: lastBusinessArticle.title, excerpt: lastBusinessArticle.excerpt, page: 'business' });
   }
   if (cricketArticles.length) {
-    const latestCricket = cricketArticles[cricketArticles.length - 1];
-    highlights.push({ type: 'cric', title: latestCricket.title, excerpt: latestCricket.excerpt, page: 'cricket' });
+    const lastCricketArticle = cricketArticles[cricketArticles.length - 1];
+    highlights.push({ type: 'cric', title: lastCricketArticle.title, excerpt: lastCricketArticle.excerpt, page: 'cricket' });
   }
 
   function renderHighlight(item) {
