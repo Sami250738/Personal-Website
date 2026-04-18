@@ -296,7 +296,7 @@
           <span class="dynamic-badge biz" id="dynamic-badge">Business</span>
           <h3 class="dynamic-highlight-title" id="dynamic-title">Latest article will appear here</h3>
           <p class="dynamic-highlight-text" id="dynamic-excerpt">A rotating preview of your latest business and cricket writing.</p>
-          <button class="dynamic-link" id="dynamic-open" onclick="showPage('business')">Open Section</button>
+          <button class="dynamic-link" id="dynamic-open">Open Section</button>
         </article>
         <aside class="dynamic-actions">
           <button class="dynamic-action biz" onclick="showPage('business')">Go to Business Articles →</button>
@@ -906,7 +906,11 @@ const cricketArticles = [
   }
 ];
 
+let homeDynamicInitialized = false;
+
 function initHomeDynamic() {
+  if (homeDynamicInitialized) return;
+  homeDynamicInitialized = true;
   const clockEl = document.getElementById('dynamic-clock');
   const bizCountEl = document.getElementById('dynamic-biz-count');
   const cricCountEl = document.getElementById('dynamic-cric-count');
