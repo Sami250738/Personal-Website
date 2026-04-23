@@ -205,6 +205,16 @@
   .cert-link { color: var(--navy); text-decoration: none; border-bottom: 1px dashed var(--gold); }
   .cert-link:hover { color: var(--gold); }
   .portfolio-note { font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem; }
+  .portfolio-project-card { cursor: pointer; transition: transform 0.22s, box-shadow 0.22s, background 0.22s; border: 1px solid transparent; border-radius: 4px; padding: 1rem; }
+  .portfolio-project-card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.08); background: #fff; border-color: var(--border); }
+  .portfolio-detail-wrap { max-width: 1000px; margin: 0 auto; }
+  .portfolio-detail-meta { display: flex; flex-wrap: wrap; gap: 0.8rem 1.2rem; margin-bottom: 1.4rem; color: var(--text-muted); font-size: 0.95rem; }
+  .portfolio-highlight-list, .portfolio-contribution-list { list-style: none; margin: 1rem 0 0; }
+  .portfolio-highlight-list li, .portfolio-contribution-list li { padding-left: 1rem; position: relative; margin-bottom: 0.75rem; color: var(--text-mid); }
+  .portfolio-highlight-list li::before, .portfolio-contribution-list li::before { content: '•'; position: absolute; left: 0; color: var(--green-light); }
+  .portfolio-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .portfolio-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; border: 1px solid var(--border); background: #fff; }
+  .portfolio-section-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--navy); margin-top: 2rem; margin-bottom: 0.75rem; }
   @media (max-width: 800px) {
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .hero-sections { flex-direction: column; align-items: center; }
@@ -433,42 +443,28 @@
     <div class="about-me-body-inner">
       <div class="about-me-grid">
         <div>
-          <div class="about-block-title">Previous Work Projects</div>
-          <div class="exp-item">
-            <div class="exp-top"><div class="exp-role">Sales Intern Project Portfolio</div><div class="exp-date">Sep 2025 – Nov 2025</div></div>
-            <div class="exp-company">Brand Craftar</div>
+          <div class="about-block-title">Events & Projects</div>
+<div class="exp-item" onclick="showGreenaugurate()" style="cursor:pointer; border:1px solid var(--border); padding:1rem 1.25rem; background:#fff; transition:transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+  <div class="exp-top">
+    <div class="exp-role" style="display:flex; align-items:center; gap:8px;">
+      🌿 Greenaugurate
+      <span style="font-size:0.7rem; background:var(--green); color:#c8e6c9; padding:2px 8px; border-radius:2px; letter-spacing:0.1em; text-transform:uppercase; font-family:'Crimson Text',serif;">Event</span>
+    </div>
+    <div class="exp-date">Aug 2023 – Sep 2023</div>
+  </div>
+  <div class="exp-company">University of Dhaka</div>
+  <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-top:0.3rem;">First-of-its-kind sustainability event at FBS — 3,000+ students, 12 universities, national case competition. <span style="color:var(--green-light); font-weight:600;">View full event →</span></p>
+</div>
+        <div class="about-block-title">Events and Projects</div>
+         <div class="exp-item portfolio-project-card" onclick="openPortfolioProject('greenaugurate')">
+            <div class="exp-top"><div class="exp-role">Greenaugurate</div><div class="exp-date">Aug 2023 – Sep 2023</div></div>
+            <div class="exp-company">Associated with University of Dhaka</div>
             <ul class="exp-bullets">
-              <li>Conducted business &amp; market analysis for 2 client companies on branding strategies</li>
-              <li>Developed customised pitch decks, onboarding 5 clients</li>
-              <li>Built a sales pipeline generating 20–40 qualified leads/month at 10–20% close rate</li>
+              <li>Launched a multidimensional sustainability-focused event for the Department of Tourism and Hospitality Management</li>
+              <li>Connected industry, academia, students, faculty members, and partner brands under one inclusive platform</li>
+              <li>Click to view the full event story, achievements, contributions, and gallery</li>
             </ul>
-          </div>
-          <div class="exp-item">
-            <div class="exp-top"><div class="exp-role">Marketing Campaign Project Portfolio</div><div class="exp-date">Jun 2025 – Oct 2025</div></div>
-            <div class="exp-company">Pacific Asia Travel Association (PATA)</div>
-            <ul class="exp-bullets">
-              <li>Communicated with Airbnb &amp; BBC stakeholders regarding PTM 2025</li>
-              <li>Developed monthly promotional campaign including video interviews &amp; reels</li>
-              <li>Planned bi-weekly newsletter content, blog articles, and social media posts</li>
-            </ul>
-          </div>
-          <div class="exp-item">
-            <div class="exp-top"><div class="exp-role">Branding &amp; Marketing Growth Project</div><div class="exp-date">Mar 2024 – Aug 2024</div></div>
-            <div class="exp-company">Data Solution 360 (Part-time)</div>
-            <ul class="exp-bullets">
-              <li>Built partnerships with 30+ university organisations through MOU signings</li>
-              <li>Increased organic reach by 400% (8K → 40K followers)</li>
-              <li>Achieved BDT 700k in course sales revenue within the 3rd month</li>
-            </ul>
-          </div>
-          <div class="exp-item">
-            <div class="exp-top"><div class="exp-role">Corporate Sponsorship Project</div><div class="exp-date">Aug 2023 – Sep 2023</div></div>
-            <div class="exp-company">Greenaugurate Event</div>
-            <ul class="exp-bullets">
-              <li>Secured BDT 500,000 through sponsorship proposals to corporate partners</li>
-              <li>Coordinated judges' panels for a national sustainability-focused case competition</li>
-            </ul>
-          </div>
+          </div>  
         </div>
         <div>
           <div class="about-block-title">Certificates</div>
@@ -537,6 +533,35 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div></footer>
+ </div>
+ 
+ <!-- PORTFOLIO DETAIL PAGE -->
+<div class="page" id="page-portfolio-detail">
+  <div class="page-header cric-header">
+    <div class="page-header-inner">
+      <button class="back-btn" onclick="showPage('about')">← Back to Portfolio</button>
+      <p class="page-eyebrow">Event and Project Details</p>
+      <h1 id="portfolio-detail-title"></h1>
+      <div class="page-rule"></div>
+      <p id="portfolio-detail-subtitle"></p>
+    </div>
+  </div>
+  <div class="article-full">
+    <div class="portfolio-detail-wrap">
+      <div class="portfolio-detail-meta">
+        <span id="portfolio-detail-date"></span>
+        <span id="portfolio-detail-org"></span>
+      </div>
+      <div class="article-body" id="portfolio-detail-body"></div>
+      <h2 class="portfolio-section-title">Highlights and Achievements</h2>
+      <ul class="portfolio-highlight-list" id="portfolio-detail-highlights"></ul>
+      <h2 class="portfolio-section-title">My Contribution</h2>
+      <ul class="portfolio-contribution-list" id="portfolio-detail-contributions"></ul>
+      <h2 class="portfolio-section-title">Event Gallery</h2>
+      <div class="portfolio-gallery" id="portfolio-detail-gallery"></div>
     </div>
   </div>
   <footer><div class="footer-brand">Jayed Insights</div><div class="footer-copy">&copy; 2026 Jayed Insights. All rights reserved.</div></footer>
@@ -1315,6 +1340,77 @@ const cricketArticles = [
   }
 ];
 
+ const portfolioProjects = [
+  {
+    id: 'greenaugurate',
+    title: 'Greenaugurate',
+    subtitle: 'A sustainability-focused flagship event blending academia, hospitality, and industry collaboration.',
+    date: 'Aug 2023 – Sep 2023',
+    organization: 'Associated with University of Dhaka',
+    description: `
+      <p>Greenaugurate is an event launched to achieve multidimensional objectives regarding the pioneer department of Service Management and Tourism for higher studies. This was the very first event that amplified the sphere and broke every typical modality of any event held in the Faculty of Business Studies.</p>
+      <p>We ensured one of the most synergetic collaborations between industry and academia. The activities were designed to ensure inclusivity for students and faculty members of FBS, other universities, and not just THM or the University of Dhaka alone.</p>
+      <p>We engaged everyone present in the premises through multiple activities, provided free snacks, and created a modern, enjoyable, and memorable environment. The entire event was built to make every moment hospitable, energetic, and meaningful.</p>
+    `,
+    highlights: [
+      'Approached sponsors and onboarded 5 brands with logo partnerships',
+      'Partnered with 3 prominent five-star hotels',
+      'Brought 12 sustainable food and crafts businesses together',
+      'Gathered 17 partner brands under one event banner',
+      'Accumulated 12 universities teaching Tourism and Hospitality Management under one umbrella',
+      'Launched the first ever national tourism sustainability-focused case competition',
+      'Gathered 3000+ students at the FBS premises',
+      'Decorated the FBS premises with a green theme',
+      'Gifted 179 plants to faculty members of FBS, University of Dhaka',
+      'Organized a seminar involving major tourism minds of the nation',
+      'Promoted sustainability with interactive games and waste management actions'
+    ],
+    contributions: [
+      'Planned the event and created the initial draft',
+      'Created the sponsorship pitch deck',
+      'Communicated with potential sponsors through emails and calls',
+      'Joined sponsor meetings and pitched the ideas directly',
+      'Managed the judge for the competition',
+      'Personally pitched to City Bank, Regency Hotel, and Bangladesh Stock Exchange',
+      'Secured 300 packets of biriyani and BDT 100,000',
+      'Contributed to ornamenting the FBS premises with a green theme'
+    ],
+    images: [
+      '1699343302496.png',
+      '1699343303149.png',
+      '1699343303176.png',
+      '1699343303797.png',
+      '1699343303990.png',
+      '1699343303990 (1).png',
+      '1699343304834.png',
+      '1699343304834 (1).png',
+      '1699343305725.png',
+      '1699343306027.png',
+      '1699343306027 (1).png',
+      '1699343306235.png',
+      '1699343306235 (1).png',
+      'WhatsApp Image 2025-05-19.png',
+      'WhatsApp Image 2025-10-22.png'
+    ]
+  }
+];
+
+function openPortfolioProject(id) {
+  const project = portfolioProjects.find(item => item.id === id);
+  if (!project) return;
+
+  document.getElementById('portfolio-detail-title').textContent = project.title;
+  document.getElementById('portfolio-detail-subtitle').textContent = project.subtitle;
+  document.getElementById('portfolio-detail-date').textContent = project.date;
+  document.getElementById('portfolio-detail-org').textContent = project.organization;
+  document.getElementById('portfolio-detail-body').innerHTML = project.description;
+  document.getElementById('portfolio-detail-highlights').innerHTML = project.highlights.map(item => `<li>${item}</li>`).join('');
+  document.getElementById('portfolio-detail-contributions').innerHTML = project.contributions.map(item => `<li>${item}</li>`).join('');
+  document.getElementById('portfolio-detail-gallery').innerHTML = project.images.map(img => `<img src="${img}" alt="${project.title} image">`).join('');
+
+  showPage('portfolio-detail', { updateHash: false });
+}
+ 
 let articleOrigin = 'business';
  
 function showPage(name, options = {}) {
@@ -1449,7 +1545,7 @@ function loadFromHash() {
     return;
   }
   const page = hash || 'home';
-  const validPages = ['home', 'business', 'cricket', 'about'];
+  const validPages = ['home', 'business', 'cricket', 'about', 'portfolio-detail'];
   showPage(validPages.includes(page) ? page : 'home', { updateHash: false });
 }
 
