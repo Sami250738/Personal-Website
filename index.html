@@ -324,6 +324,7 @@
     padding: 1rem 5%; 
     border-top: 1px solid var(--gold); 
     z-index: 199; 
+   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
   .nav-links.open { display: flex; }
   .hamburger { 
@@ -1595,6 +1596,7 @@ function openPortfolioProject(id) {
 let articleOrigin = 'business';
  
 function showPage(name, options = {}) {
+ document.querySelector('.nav-links').classList.remove('open');
   const { updateHash = true } = options;
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
@@ -1613,6 +1615,7 @@ function showPage(name, options = {}) {
 }
 
 function gotoContact() {
+ document.querySelector('.nav-links').classList.remove('open');
   showPage('home');
   setTimeout(() => document.getElementById('contact-anchor').scrollIntoView({ behavior: 'smooth' }), 80);
 }
